@@ -1,14 +1,13 @@
-let n=4;
+let n = 4;
 
 function repetirNumero(i) {
-    for (var j  = 1; j <= i; j++) {
-        console.log(i);
-    }
+  for (var j = 1; j <= i; j++) {
+    console.log(i);
+  }
 }
 
-for(var i = 1 ; i<= n;i++){
-   repetirNumero(i);
-
+for (var i = 1; i <= n; i++) {
+  repetirNumero(i);
 }
 
 //hola mensaje desde mi chromebook
