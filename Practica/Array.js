@@ -1,19 +1,19 @@
 const frutas = ["Manzana", "Platano"];
-frutas[2]= "Sandia";
-frutas[3]= "Pera";
-frutas[4]= "Ciruela";
+frutas[2] = "Sandia";
+frutas[3] = "Pera";
+frutas[4] = "Ciruela";
 console.log(frutas.length);
 
 let primero = frutas[0];
-let segundo = frutas[frutas.length -1]
+let segundo = frutas[frutas.length - 1];
 console.log(primero + segundo);
 
-frutas.forEach(function(elemento, indice, array) {
-    console.log(elemento, indice);
-})
+frutas.forEach(function (elemento, indice, array) {
+  console.log(elemento, indice);
+});
 
 const cars = ["Saab", "Volvo", "BMW"];
-cars[3]= "Mazda";
+cars[3] = "Mazda";
 
 console.log(cars.length);
 console.log(cars);
@@ -23,11 +23,16 @@ console.log(cars[2]);
 cars[0] = "Opel";
 //imprime en consola en formato tabla
 console.table(cars);
-//typeof: describe el tipo 
-console.log(typeof(cars));
-console.log(typeof(primero));
+//typeof: describe el tipo
+console.log(typeof cars);
+console.log(typeof primero);
 //Si se nombra un indice, lo redefinira como objeto, y el .length traera 0
-const persona = {primerNombre: "Juan", segundoNombre: "Daniel", apellido: "Morales", edad: "34"};
+const persona = {
+  primerNombre: "Juan",
+  segundoNombre: "Daniel",
+  apellido: "Morales",
+  edad: "34",
+};
 console.log(persona.primerNombre);
 
 console.table(cars.sort());
