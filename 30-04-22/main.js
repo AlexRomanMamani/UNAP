@@ -10,6 +10,7 @@ for (var i = 1; i <= n; i++) {
   repetirNumero(i);
 }
 
+console.log(document);
 //hola mensaje desde mi chromebook
 /*
 i/j/n
