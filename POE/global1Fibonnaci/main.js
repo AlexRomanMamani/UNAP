@@ -1,3 +1,4 @@
+//DECLARACIÓN DE FUNCIÓN
 function sucecionFibonacci(n) {
   let a, b, c;
   a = 1;
