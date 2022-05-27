@@ -1,15 +1,14 @@
 //DECLARACIÓN DE FUNCIÓN
-function sucecionFibonacci(n) {
-  let a, b, c;
-  a = 1;
-  b = 0;
-  c = 0;
-  for (let i = 0; i < n; i++) {
-    console.log(c);
+function sucesionFibonacci(n) {
+  let a = 1;
+  let b = 0;
+  let c = 0;
 
+  for (let i = 1; i <= n; i++) {
     c = a + b;
     a = b;
     b = c;
+    console.log(a);
   }
 
   return a;
@@ -18,5 +17,5 @@ function sucecionFibonacci(n) {
 function funcion() {
   let limite = document.getElementById("numero").value;
 
-  document.getElementById("resultado").innerHTML = sucecionFibonacci(limite);
+  document.getElementById("resultado").innerHTML = sucesionFibonacci(limite);
 }
