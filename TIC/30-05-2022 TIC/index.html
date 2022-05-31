@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Formulario</title>
+  </head>
+  <body>
+    <form action="">
+      <p>
+        Ingresa tu nombre completo
+        <input type="text" name="nombreCompleto" id="" value="nombre" />
+      </p>
+      <p>
+        Ingresa tu password
+        <input type="password" name="nombreCompleto" id="" />
+      </p>
+      <p>
+        Ingresa tu correo
+        <input type="email" name="nombreCompleto" id="" />
+      </p>
+      <!--Compo text multilinea (text area)-->
+      <p>
+        Deja un mensaje <br />
+        <textarea name="areaTexto" id="" cols="30" rows="10"></textarea>
+      </p>
+      <br />
+
+      <input type="submit" value="Enviar el formulario" />
+      <input type="reset" value="reset" />
+    </form>
+    <hr />
+    <!--Input de control de opcion (casilla de verificacion, checkbox, radio)-->
+    <form action="">
+      <p>Selecciona tus intereses</p>
+      <input type="checkbox" name="" id="" /> PEliculas <br />
+      <input type="checkbox" name="" id="" /> PEliculas <br />
+      <input type="checkbox" name="" id="" /> PEliculas <br />
+      <input type="checkbox" name="" id="" /> PEliculas <br />
+      <input type="checkbox" name="" id="" /> PEliculas <br />
+      <input type="submit" value="Enviar" /> <br />
+    </form>
+    <hr />
+    <form action="">
+      <p>Ingresos:</p>
+      <input type="radio" name="" id="" /> asd <br />
+      <input type="radio" name="" id="" /> asd <br />
+      <input type="radio" name="" id="" /> asd <br />
+      <input type="radio" name="" id="" /> asd <br />
+      <input type="submit" value="Enviar" />
+    </form>
+    <hr />
+    <form action="" target="">
+      <p>
+        Género:
+        <select name="genero">
+          <option>Masculino</option>
+          <option>Femenino</option>
+        </select>
+      </p>
+      <p><input type="submit" value="Enviar información" /></p>
+    </form>
+    <hr />
+    <form action="" target="">
+      <p>
+        Selecciona categorías:<br />
+        <select multiple name="categorias[]">
+          <option value="arte">Arte y entretenimiento</option>
+          <option value="tv">Televisión y películas</option>
+          <option value="ninos">Niños y adolescentes</option>
+          <option value="hazlotu">Hazlo tu mismo</option>
+        </select>
+      </p>
+      <p><input type="submit" value="Enviar información" /></p>
+    </form>
+    <hr />
+
+    <!--Agrupacion de controles-->
+    <form action="" target="">
+      <fieldset>
+        <legend>Información personal</legend>
+        <p>
+          <label>Nombre: <input type="text" name="nombre"/></label>
+        </p>
+        <p>
+          <label>Dirección: <input type="text" name="direccion"/></label>
+        </p>
+      </fieldset>
+      <fieldset>
+        <legend>Preferencias</legend>
+        <p>
+          <label><input type="checkbox" name="arte" /> Arte</label><br />
+          <label><input type="checkbox" name="television" /> Televisión</label
+          ><br />
+          <label><input type="checkbox" name="videojuegos" /> Videojuegos</label
+          ><br />
+          <label><input type="checkbox" name="deportes" /> Deportes</label
+          ><br />
+        </p>
+      </fieldset>
+      <input type="submit" value="Enviar" />
+    </form>
+
+    <hr />
+    <!--Aqui el action envia al correo-->
+    <form
+      action="mailto:alexromamani@gmail.com"
+      method="post"
+      enctype="text/plain"
+    >
+      Name:<br />
+      <input type="text" name="name" /><br />
+      E-mail:<br />
+      <input type="text" name="mail" /><br />
+      Comment:<br />
+      <input type="text" name="comment" size="50" /><br /><br />
+      <input type="submit" value="Send" />
+      <input type="reset" value="Reset" />
+    </form>
+  </body>
+</html>

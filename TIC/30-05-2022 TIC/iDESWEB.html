@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body style="font-family:Arial, Helvetica, sans-serif;">
+    <h1 style="text-align:center">iDESWEB</h1>
+    <h4 style="text-align:center">Formulario de registro</h4>
+    <form action="destino.html" target="">
+      <!--fieldset1 (Quien eres?)-->
+      <div
+        style="margin-left: auto; margin-right: auto; margin-block-start: auto"
+      >
+        <fieldset>
+          <legend><strong> ¿QUIEN ERES?</strong></legend>
+          <p>
+            <label
+              >Nombre: <br />
+              <input type="text" name="nombre"
+            /></label>
+            <br />
+
+            <label
+              >Apellidos:
+              <br />
+              <input type="text" name="apellidos"
+            /></label>
+            <br />
+            <label
+              >Correo Electronico:
+              <br />
+              <input type="email" name="correo"
+            /></label>
+            <br />
+            <label
+              >Fecha de Nacimiento:
+              <br />
+              <input type="date" name="fecha"
+            /></label>
+          </p>
+        </fieldset>
+        <!--fieldset2 (De donde eres?)-->
+        <fieldset>
+          <legend><strong> ¿DE DONDE ERES?</strong></legend>
+          <p>
+            <!--labelCiudad-->
+            <label
+              >Ciudad: <br />
+              <input type="text" name="ciudad"
+            /></label>
+            <br />
+
+            <!--labelCodigo-->
+            <label
+              >Codigo Postal:
+              <br />
+              <input type="text" name="postal"
+            /></label>
+            <br />
+            <!--labelPais-->
+            <label
+              >Pais:
+              <br />
+              <select name="pais">
+                <option>Chile</option>
+                <option>Argentina</option>
+                <option>Peru</option>
+                <option>Bolivia</option>
+              </select>
+            </label>
+            <br />
+          </p>
+        </fieldset>
+        <!--fieldset3 (Como quieres iniciar sesion?)-->
+        <fieldset>
+          <legend><strong> ¿COMO QUIERES INICIAR SESION?</strong></legend>
+          <p>
+            <!--labelUsuario-->
+            <label
+              >Nombre de usuario: <br />
+              <input type="text" name="usuario"
+            /></label>
+            <br />
+
+            <!--labelContraseña-->
+            <label
+              >Contraseña:
+              <br />
+              <input type="password" name="password"
+            /></label>
+            <br />
+            <!--labelVuelveContraseña-->
+            <label
+              >Vuelve a escribir la contraseña:
+              <br />
+              <input type="password" name="password2"
+            /></label>
+          </p>
+        </fieldset>
+        <!--fieldset4 (CONDICIONES)-->
+        <fieldset>
+          <legend><strong>CONDICIONES DE REGISTRO</strong></legend>
+          <p>
+            <label for=""
+              >Deseo recibir ofertas de IDESWEB <br />
+              <input type="radio" name="radio" id="" />Una vez al dia
+              <input type="radio" name="radio" id="" />Una vez a la semana
+              <input type="radio" name="radio" id="" />Una vez al mes <br />
+
+              <input type="radio" name="acepto" id="" required />Acepto el
+              acuerdo de servicios, la declaracion de privacidad y la
+              declaracion de uso de cookles.
+            </label>
+          </p>
+        </fieldset>
+      </div>
+      <br />
+      <p style="text-align:center">
+        <input type="submit" value="Enviar" />
+      </p>
+    </form>
+  </body>
+</html>
