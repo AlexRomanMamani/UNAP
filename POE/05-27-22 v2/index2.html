@@ -1,116 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Contacto</title>
+    <style>
+      table,
+      th,
+      td {
+        border-collapse: collapse;
+        vertical-align: top;
+      }
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Contacto</title>
-  <style>
-    table,
-    th,
-    td {
-      border-collapse: collapse;
-      vertical-align: top;
-    }
+      table.center {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
+  </head>
 
-    table.center {
-      margin-left: auto;
-      margin-right: auto;
-    }
-  </style>
-</head>
+  <body>
+    <!--Menu-->
 
-<body>
-  <!--Menu-->
+    <button style="height: 50px; width: 150px">
+      <a href="index1.html">CV</a>
+    </button>
 
-  <button style="height:50px;width:150px">
-    <a href="index1.html">CV</a>
-  </button>
+    <button style="height: 50px; width: 150px">
+      <a href="index2.html">Contacto</a>
+    </button>
 
-  <button style="height:50px;width:150px">
-    <a href="index2.html">Contacto</a>
-  </button>
-
-  <button style="height:50px;width:150px">
-    <a href="index3.html">Sitios Favoritos</a>
-  </button>
-
-  <h1>Fomulario de Contacto</h1>
-  <table class="center">
-    <form action="https://formsubmit.co/alemamanim@estudiantesunap.cl" method="POST">
-      <tr>
-        <td>
-          <label for="nombre">Nombre</label>
-        </td>
-        <td>
-          <input type="text" name="nombre" required />
-        </td>
-        <br />
-      </tr>
-      <label for="telefono">Teléfono</label>
-      <input type="text" name="telefono" maxlength="9" required /> <br />
-
-      <label for="email">Email</label>
-      <input type="email" name="email" required /> <br />
-
-      <label for="asunto">Asunto</label>
-      <input type="text" name="asunto" required /> <br />
-      <!--TEXT AREA-->
-      <label for="mensaje">Mensaje</label>
-      <textarea name="mensaje" id="" cols="30" rows="10" required></textarea>
-      <br />
-      <!--RADIO-->
-      <!--APLICAR EL LABEL PERMITE QUE NO SOLO EL RADIO SEA SELECCIONABLE, SI NO QUE TAMBIEN EL TEXTO QUE LO ACOMPAÑA-->
-      <label for="sexo">Sexo</label>
-      <input type="radio" name="sexo" id="masculino" value="Masculino" />
-      <label for="masculino">Masculino</label>
-      <input type="radio" name="sexo" id="femenino" value="Femenido" />
-      <label for="femenino">Femenino</label>
-      <input type="radio" name="sexo" id="fluido" value="Fluido" />
-      <label for="fluido">Diversidad</label>
-      <br />
-      <!--CHECKBOX-->
-      <label for="">Hobbies</label> <br />
-      <input type="checkbox" name="vj" id="VJ" value="videojuegos" />
-      <label for="VJ">Video Juegos</label> <br />
-      <input type="checkbox" name="de" id="DE" value="deportes" />
-      <label for="DE">Deportes</label> <br />
-      <input type="checkbox" name="se" id="SE" value="series" />
-      <label for="SE">Series</label> <br />
-      <input type="checkbox" name="le" id="LE" value="lectura" />
-      <label for="LE">Lectura</label> <br />
-      <input type="checkbox" name="ju" id="JU" value="juegos" />
-      <label for="JU">Juegos</label> <br />
-      <input type="checkbox" name="ot" id="OT" value="otros" />
-      <label for="OT">Otros</label>
-      <br />
-      <!--SELECT-->
-      <label for="medioPago">Medio de Pago</label>
-      <select name="medioPago" id="mp">
-        <option value="efectivo">Efectivo</option>
-        <option value="tarjeta">Tarjeta</option>
-        <option value="transferencia">Transferencia</option>
-      </select>
-      <!--DATALIST-->
-
-      <label for="localidad">Localidad</label>
-      <input list="localidad" name="loc" id="LOC">
-      <datalist id="localidad">
-        <option value="Iquique">
-        <option value="Alto Hospicio">
-        <option value="Tamarugal">
-      </datalist>
-      <!--FREEFORM HANDLER (FORMSUBMIT)-->
-      <!--Netlify-->
-      <br />
-      <br />
-
-      <!--SUBMIT-->
-      <input type="submit" value="Enviar" />
-      <input type="reset" value="Reset" />
-    </form>
-  </table>
-</body>
-
+    <button style="height: 50px; width: 150px">
+      <a href="index3.html">Sitios Favoritos</a>
+    </button>
+    <!--TITULO PAGINA-->
+    <h1 style="text-align: center">Fomulario de Contacto</h1>
+    <!--FORM EN TABLA-->
+    <table class="center">
+      <form
+        action="https://formsubmit.co/alemamanim@estudiantesunap.cl"
+        method="POST"
+      >
+        <!--NOMBRE-->
+        <tr>
+          <td>
+            <label for="nombre">Nombre</label>
+          </td>
+          <td>
+            <input type="text" name="nombre" required />
+          </td>
+        </tr>
+        <!--TELEFONO-->
+        <tr>
+          <td>
+            <label for="telefono">Teléfono</label>
+          </td>
+          <td>
+            <input type="text" name="telefono" maxlength="9" required />
+          </td>
+        </tr>
+        <!--MAIL-->
+        <tr>
+          <td>
+            <label for="email">Email</label>
+          </td>
+          <td><input type="email" name="email" required /></td>
+        </tr>
+        <!--ASUNTO-->
+        <tr>
+          <td>
+            <label for="asunto">Asunto</label>
+          </td>
+          <td>
+            <input type="text" name="asunto" required />
+          </td>
+        </tr>
+        <!--TEXT AREA-->
+        <tr>
+          <td>
+            <label for="mensaje">Mensaje</label>
+          </td>
+          <td>
+            <textarea
+              name="mensaje"
+              id=""
+              cols="30"
+              rows="10"
+              required
+            ></textarea>
+          </td>
+        </tr>
+        <!--RADIO-->
+        <!--APLICAR EL LABEL PERMITE QUE NO SOLO EL RADIO SEA SELECCIONABLE, SI NO QUE TAMBIEN EL TEXTO QUE LO ACOMPAÑA-->
+        <tr>
+          <td>
+            <label for="sexo">Sexo</label>
+          </td>
+          <td>
+            <input type="radio" name="sexo" id="masculino" value="Masculino" />
+            <label for="masculino">Masculino</label>
+            <input type="radio" name="sexo" id="femenino" value="Femenido" />
+            <label for="femenino">Femenino</label>
+            <input type="radio" name="sexo" id="fluido" value="Fluido" />
+            <label for="fluido">Diversidad</label>
+          </td>
+        </tr>
+        <!--CHECKBOX-->
+        <tr>
+          <td>
+            <label for="">Hobbies</label>
+          </td>
+          <td>
+            <p>
+              <input type="checkbox" name="vj" id="VJ" value="videojuegos" />
+              <label for="VJ">Video Juegos</label>
+              <br />
+              <input type="checkbox" name="de" id="DE" value="deportes" />
+              <label for="DE">Deportes</label>
+              <br />
+              <input type="checkbox" name="se" id="SE" value="series" />
+              <label for="SE">Series</label>
+              <br />
+              <input type="checkbox" name="le" id="LE" value="lectura" />
+              <label for="LE">Lectura</label>
+              <br />
+              <input type="checkbox" name="ju" id="JU" value="juegos" />
+              <label for="JU">Juegos</label>
+              <br />
+              <input type="checkbox" name="ot" id="OT" value="otros" />
+              <label for="OT">Otros</label>
+            </p>
+          </td>
+        </tr>
+        <!--SELECT-->
+        <tr>
+          <td>
+            <label for="medioPago">Medio de Pago</label>
+          </td>
+          <td>
+            <select name="medioPago" id="mp">
+              <option value="efectivo">Efectivo</option>
+              <option value="tarjeta">Tarjeta</option>
+              <option value="transferencia">Transferencia</option>
+            </select>
+          </td>
+        </tr>
+        <!--DATALIST-->
+        <tr>
+          <td>
+            <label for="localidad">Localidad</label>
+          </td>
+          <td>
+            <input list="localidad" name="loc" id="LOC" />
+            <datalist id="localidad">
+              <option value="Iquique"></option>
+              <option value="Alto Hospicio"></option>
+              <option value="Tamarugal"></option>
+            </datalist>
+          </td>
+        </tr>
+        <!--FREEFORM HANDLER (FORMSUBMIT)-->
+        <!--Netlify-->
+        <!--SUBMIT-->
+        <tr>
+          <td>
+            <input type="submit" value="Enviar" />
+            <input type="reset" value="Reset" />
+          </td>
+        </tr>
+      </form>
+    </table>
+  </body>
 </html>
