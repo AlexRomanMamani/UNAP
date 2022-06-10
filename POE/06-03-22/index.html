@@ -20,7 +20,17 @@
 
       <button onclick="generarParrafos()">Agregar Parrafos</button>
 
-      <button onclick="eliminarParrafos()">Eliminar Parrafos</button>
+      <!-- <button onclick="eliminarParrafos()">Eliminar Parrafos</button> -->
+
+      <button class="btn-deleteParagraph">Borrar ultimo parrafos</button>
+      <script type="text/javascript">
+        document
+          .querySelector(".btn-deleteParagraph")
+          .addEventListener("click", () => {
+            const parrafos = document.querySelectorAll("p");
+            if (!!parrafos.length) parrafos[parrafos.length - 1].remove();
+          });
+      </script>
     </div>
   </body>
 </html>

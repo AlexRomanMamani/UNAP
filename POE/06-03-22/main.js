@@ -55,11 +55,16 @@ function generarParrafos() {
 
 function eliminarParrafos() {
   //ELIMINAR NODO
-  //NUEVO PUNTO DE INSERCION
-  let ptoInsercion2 = document.getElementById("cuerpo");
 
-  alert(ptoInsercion2);
+  //NUEVO PUNTO DE INSERCION
+  // let ptoInsercion2 = document.getElementById("cuerpo");
 
   //hijo.lePideAlPadre.remuevaHijo(el mismo se pide eliminar)
-  ptoInsercion2.parentNode.removeChild(ptoInsercion2);
+  //ptoInsercion2.parentNode.removeChild(newNodo);
+  document
+    .querySelector(".btn-deleteParagraph")
+    .addEventListener("click", () => {
+      const parrafos = document.querySelectorAll("p");
+      if (!!parrafos.length) parrafos[parrafos.length - 1].remove();
+    });
 }
