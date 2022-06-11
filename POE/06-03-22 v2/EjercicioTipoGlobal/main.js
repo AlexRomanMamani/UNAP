@@ -23,7 +23,6 @@ function buscarUrl() {
   ptoResultado.textContent = "No se encontro resultado";
 }
 
-
 //AGREGAR NODOS A BOTONES
 function agregarUrl() {
   //CREACION LINK
@@ -58,8 +57,6 @@ function agregarUrl() {
 }
 
 function borrarUrl() {
-  //RES RESCATAR INFORMACION DE CUADRO ID RESULTADO
-  //BUS RESCATAR INFO DE CUADRO BUSCAR
   let infoBuscar = document.getElementById("buscar");
   //DETERMINAR DONDE BUSCAR
   let ptoBusqueda = document.getElementById("paginas");
