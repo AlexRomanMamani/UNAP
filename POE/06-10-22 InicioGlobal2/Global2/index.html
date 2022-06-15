@@ -5,97 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Agenda Telefonica</title>
-    <style>
-      table,
-      th,
-      td {
-        border-collapse: collapse;
-        vertical-align: top;
-      }
-    </style>
   </head>
   <body>
     <fieldset>
-      <legend><strong>Agenda Telefonica</strong></legend>
-      <table class="center">
-        <form action="" id="form">
-          <!--LABEL NOMBRE-->
-          <tr>
-            <td><label for="nombre">Nombre*:</label></td>
-            <td>
-              <input type="text" name="nombre" id="nombre" required />
-            </td>
-          </tr>
-          <!--LABEL APELLIDO-->
-          <tr>
-            <td><label for="apellido">Apellido*:</label></td>
-            <td>
-              <input type="text" name="apellido" id="apellido" required />
-            </td>
-          </tr>
-          <!--LABEL DIRECCION-->
-          <tr>
-            <td><label for="direccion">Dirección:</label></td>
-            <td><input type="text" name="direccion" id="direccion" /></td>
-          </tr>
-          <!--LABEL EMAIL-->
-          <tr>
-            <td><label for="email">Email:</label></td>
-            <td><input type="email" name="email" id="email" /></td>
-          </tr>
-          <!--LABEL TELEFONO-->
-          <tr>
-            <td><label for="telefono">Teléfono*:</label></td>
-            <td>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                pattern="[0-9]{9}"
-                placeholder="912345678"
-                required
-              />
-            </td>
-          </tr>
-          <!--LABEL ORGANIZACION-->
-          <tr>
-            <td><label for="organizacion">Organización:</label></td>
-            <td><input type="text" name="organizacion" id="organizacion" /></td>
-          </tr>
-          <!--type:submit (registrar)-->
-          <tr>
-            <td>
-              <input
-                type="submit"
-                value="Registrar Contacto"
-                style="height: 30px; width: 150px"
-              />
-            </td>
-          </tr>
-
-          <!--INPUT NUMERICO -->
-          <tr>
-            <td><label for="correlativo">Correlativo:</label></td>
-            <td>
-              <input type="number" value="" />
-            </td>
-          </tr>
-        </form>
-      </table>
+      <legend><strong>Registrar nuevo Contacto</strong></legend>
+      <!--////FORM REGISTRAR DATOS////-->
+      <form action="" id="form">
+        <!--LABEL NOMBRE-->
+        <label for="nombre">Nombre</label>
+        <input
+          type="text"
+          name="nombre"
+          id="nombre"
+          required
+          placeholder="(Requerido)"
+        />
+        <!--LABEL APELLIDO-->
+        <label for="apellido"> Apellido</label>
+        <input
+          type="text"
+          name="apellido"
+          id="apellido"
+          required
+          placeholder="(Requerido)"
+        />
+        <!--LABEL DIRECCION-->
+        <label for="direccion">Dirección</label>
+        <input type="text" name="direccion" id="direccion" /> <br />
+        <!--LABEL EMAIL-->
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" />
+        <!--LABEL TELEFONO-->
+        <label for="telefono">Teléfono (max. 9 digitos)</label>
+        <input
+          type="tel"
+          id="telefono"
+          name="telefono"
+          pattern="[0-9]{9}"
+          required
+          maxlength="9"
+          placeholder="(Requerido) "
+        />
+        <!--LABEL ORGANIZACION-->
+        <label for="organizacion">Organización</label>
+        <input type="text" name="organizacion" id="organizacion" /> <br />
+        <!--REGISTRAR-->
+        <button>Registrar Contacto</button>
+        <!--BTN BORRAR INFORMACION-->
+        <input type="reset" value="Borrar información" />
+      </form>
     </fieldset>
+    <!--////HERRAMIENTAS////-->
+    <fieldset>
+      <legend><strong>Herramientas</strong></legend>
+      <!--ELIMINAR CORRELATIVO -->
+      Eliminar contacto por: <br />Nº Correlativo
+      <input type="number" name="correlativo" style="width: 50px" />
+      <button onclick="">Eliminar</button> <br />
+      <br />
+      <!--BUSCAR CONTACTO-->
+      Buscar contacto por: <br />Nombre o apellido
+      <input type="text" name="buscarNombre" id="buscarNombre" size="15" />
+      <button onclick="">Buscar</button> Nº Correlativo
+      <input
+        type="number"
+        name="buscarCorrelativo"
+        id="buscarCorrelativo"
+        style="width: 50px"
+      />
+      <button onclick="">Buscar</button> <br />
+    </fieldset>
+    <!--////CONTACTOS////-->
     <fieldset>
       <legend><strong>Contactos</strong></legend>
       <table>
         <!--ABC-->
         <tr>
-          <strong>A</strong>
+          <td>
+            <strong>A</strong>
+          </td>
         </tr>
         <tr>
-          <td id=""></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>
+            <input type="text" name="" id="" />
+            <input type="hidden" name="" value="asd" />
+          </td>
         </tr>
       </table>
     </fieldset>

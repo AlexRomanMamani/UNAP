@@ -1,7 +1,5 @@
 //AGREGAR NODO BUSCAR A BOTON
 function buscarUrl() {
-  //RES RESCATAR INFORMACION DE CUADRO ID RESULTADO
-  //BUS RESCATAR INFO DE CUADRO BUSCAR
   let infoBuscar = document.getElementById("buscar");
   //DETERMINAR DONDE BUSCAR
   let ptoBusqueda = document.getElementById("paginas");
