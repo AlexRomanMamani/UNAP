@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Agenda Telefonica</title>
   </head>
-  <body>
-    <fieldset>
+  <body style="background-color: #e0deca">
+    <fieldset style="background-color: #c7d36f">
       <legend><strong>Registrar nuevo Contacto</strong></legend>
       <!--////FORM REGISTRAR DATOS////-->
       <form action="" id="form">
@@ -50,13 +50,13 @@
         <label for="organizacion">Organización</label>
         <input type="text" name="organizacion" id="organizacion" /> <br />
         <!--REGISTRAR-->
-        <button>Registrar Contacto</button>
+        <button onclick="agregarRegistro()">Registrar Contacto</button>
         <!--BTN BORRAR INFORMACION-->
         <input type="reset" value="Borrar información" />
       </form>
     </fieldset>
     <!--////HERRAMIENTAS////-->
-    <fieldset>
+    <fieldset style="background-color: #c7d36f">
       <legend><strong>Herramientas</strong></legend>
       <!--ELIMINAR CORRELATIVO -->
       Eliminar contacto por: <br />Nº Correlativo
@@ -76,22 +76,352 @@
       <button onclick="">Buscar</button> <br />
     </fieldset>
     <!--////CONTACTOS////-->
-    <fieldset>
+
+    <fieldset style="background-color: #c7d36f">
       <legend><strong>Contactos</strong></legend>
-      <table>
-        <!--ABC-->
+      <strong>A</strong>
+      <table id="tableA">
+        <!--A-->
+      </table>
+      <strong>B</strong>
+      <table id="tableB">
+        <!--B-->
         <tr>
-          <td>
-            <strong>A</strong>
-          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
         </tr>
+      </table>
+      <strong>C</strong>
+      <table id="tableC">
+        <!--C-->
         <tr>
-          <td>
-            <input type="text" name="" id="" />
-            <input type="hidden" name="" value="asd" />
-          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+        </tr>
+      </table>
+      <strong>D</strong>
+      <table id="tableD">
+        <!--D-->
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+        </tr>
+      </table>
+      <strong>E</strong>
+      <table id="tableE">
+        <!--E-->
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+        </tr>
+      </table>
+      <strong>F</strong>
+      <table id="tableF">
+        <!--F-->
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+        </tr>
+      </table>
+      <strong>G</strong>
+      <table id="tableG">
+        <!--G-->
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+        </tr>
+      </table>
+      <strong>H</strong>
+      <table id="tableH">
+        <!--H-->
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+        </tr>
+      </table>
+      <strong>I</strong>
+      <table id="tableI">
+        <!--I-->
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+        </tr>
+      </table>
+      <strong>J</strong>
+      <table id="tableJ">
+        <!--J-->
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+        </tr>
+      </table>
+      <strong>K</strong>
+      <table id="tableK">
+        <!--K-->
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+        </tr>
+      </table>
+      <strong>L</strong>
+      <table id="tableL">
+        <!--L-->
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+        </tr>
+      </table>
+      <strong>M</strong>
+      <table id="tableM">
+        <!--M-->
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+        </tr>
+      </table>
+      <strong>N</strong>
+      <table id="tableN">
+        <!--N-->
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+        </tr>
+      </table>
+      <strong>Ñ</strong>
+      <table id="tableÑ">
+        <!--Ñ-->
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+        </tr>
+      </table>
+      <strong>O</strong>
+      <table id="tableO">
+        <!--O-->
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+        </tr>
+      </table>
+      <strong>P</strong>
+      <table id="tableP">
+        <!--P-->
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+        </tr>
+      </table>
+      <strong>Q</strong>
+      <table id="tableQ">
+        <!--Q-->
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+        </tr>
+      </table>
+      <strong>R</strong>
+      <table id="tableR">
+        <!--R-->
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+        </tr>
+      </table>
+      <strong>S</strong>
+      <table id="tableS">
+        <!--S-->
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+        </tr>
+      </table>
+      <strong>T</strong>
+      <table id="tableT">
+        <!--T-->
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+        </tr>
+      </table>
+      <strong>U</strong>
+      <table id="tableU">
+        <!--U-->
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+        </tr>
+      </table>
+      <strong>V</strong>
+      <table id="tableV">
+        <!--V-->
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+        </tr>
+      </table>
+      <strong>W</strong>
+      <table id="tableW">
+        <!--W-->
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+        </tr>
+      </table>
+      <strong>X</strong>
+      <table id="tableX">
+        <!--X-->
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+        </tr>
+      </table>
+      <strong>Y</strong>
+      <table id="tableY">
+        <!--Y-->
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+        </tr>
+      </table>
+      <strong>Z</strong>
+      <table id="tableZ">
+        <!--Z-->
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
+          <td hidden></td>
         </tr>
       </table>
     </fieldset>
+    <script src="main.js"></script>
   </body>
 </html>
