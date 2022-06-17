@@ -4,53 +4,34 @@ function agregarRegistro() {
   let primeraLetra = apellido.value[0];
 
   const abc = [
-    "a",
-    "b",
-    "c",
-    "d",
-    "e",
-    "f",
-    "g",
-    "h",
-    "i",
-    "j",
-    "k",
-    "l",
-    "m",
-    "n",
-    "ñ",
-    "o",
-    "p",
-    "q",
-    "r",
-    "s",
-    "t",
-    "u",
-    "v",
-    "w",
-    "x",
-    "y",
-    "z",
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "Ñ",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z",
   ];
-
-  for (let i = 0; i < abc.length; i++) {
-    if (primeraLetra === abc[i]) {
-      // CREAR PTOINSERCION TABLE
-      /*let A = document.getElementById("tableA");
-    
-    // CREAR ELEMENTO <tr> y <td>
-    let fila = document.createElement("tr");
-    let celda = document.createElement("td");
-
-    // CREAR CELDAS
-    let textoCelda = document.createTextNode("Hola Mundo!");
-    celda.appendChild(textoCelda);
-    fila.appendChild(celda);
-    A.appendChild(fila);*/
-    } else {
-    }
-  }
-
   let arrayRegistro = [];
 
   arrayRegistro[0] = "";
@@ -60,6 +41,36 @@ function agregarRegistro() {
   arrayRegistro[4] = document.getElementById("email");
   arrayRegistro[5] = document.getElementById("telefono");
   arrayRegistro[6] = document.getElementById("organizacion");
+
+  for (let i = 0; i < abc.length; i++) {
+    if (primeraLetra === abc[i]) {
+      let mostrar = abc[i];
+      alert(mostrar);
+      // CREAR PTOINSERCION TABLE
+      let tabla = document.getElementById(abc[i]);
+
+      // CREAR ELEMENTO <tr> y <td>
+      let fila = document.createElement("tr");
+
+      for (let j = 0; j < arrayRegistro.length; j++) {
+        let celda = document.createElement("td");
+        celda.appendChild(arrayRegistro[j].value);
+        alert(arrayRegistro.length);
+      }
+      fila.appendChild(celda);
+      tabla.appendChild(fila);
+
+      /*
+      let celda = document.createElement("td");
+
+      // CREAR CELDAS
+      let textoCelda = document.createTextNode("Hola Mundo!");
+      celda.appendChild(textoCelda);
+      fila.appendChild(celda);
+      tabla.appendChild(fila);*/
+    } else {
+    }
+  }
 
   //alert(arrayRegistro.length);
 
