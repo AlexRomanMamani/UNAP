@@ -82,13 +82,22 @@ function correlativoMax() {
 function eliminarCorrelativo() {
   //----RESCATAR CUADRO DE BUSQUEDA----
   let cuadroBuscar = document.getElementById("correlativo").value;
+  let ptoRespuesta = document.getElementById("respuesta");
 
-  //----EN QUE TABLA BUSCAR----
-  let filaEliminar = document.getElementById(cuadroBuscar);
-  //----ELIMINAR FILA----
-  filaEliminar.parentNode.removeChild(filaEliminar);
+  if (document.getElementById(cuadroBuscar)) {
+    //----EN QUE TABLA BUSCAR----
+    let filaEliminar = document.getElementById(cuadroBuscar);
 
-  cuadroBuscar.value = "";
+    //----ELIMINAR FILA----
+    filaEliminar.parentNode.removeChild(filaEliminar);
+
+    //----LIMPIAR CUADRO BUSQUEDA----
+    cuadroBuscar.value = "";
+  } else {
+    cuadroBuscar.value = "";
+    ptoRespuesta.setAttribute("style", "color:red");
+    ptoRespuesta.textContent = "Contacto no encontrado";
+  }
 }
 
 function buscarCorrelativo() {
@@ -157,5 +166,5 @@ function limpiar() {
   email.value = "";
   telefono.value = "";
   organizacion.value = "";
-  ptoRespuesta.value = "";
+  ptoRespuesta.textContent = "";
 }
