@@ -7,10 +7,10 @@
     <title>Agenda Telefonica</title>
   </head>
   <body style="background-color: #e0deca">
+    <!--FORM REGISTRAR DATOS-->
     <fieldset style="background-color: #c7d36f">
       <legend><strong>Registrar nuevo Contacto</strong></legend>
-      <!--////FORM REGISTRAR DATOS////-->
-      <form action="" id="form">
+      <form>
         <!--LABEL NOMBRE-->
         <label for="nombre">Nombre</label>
         <input
@@ -49,144 +49,120 @@
         <!--LABEL ORGANIZACION-->
         <label for="organizacion">Organización</label>
         <input type="text" name="organizacion" id="organizacion" /> <br />
+        <!--NUMERO CORRELATIVO-->
+        <input type="hidden" name="lastId" id="lastId" value="1" />
         <!--REGISTRAR-->
-        <button onclick="agregarRegistro()">Registrar Contacto</button>
+        <input type="submit" value="Registrar" onclick="agregarRegistro()" />
         <!--BTN BORRAR INFORMACION-->
-        <input type="reset" value="Borrar información" />
+        <input type="button" value="Limpiar" onclick="limpiar()" />
+        <p id="respuesta"></p>
       </form>
     </fieldset>
     <!--////HERRAMIENTAS////-->
     <fieldset style="background-color: #c7d36f">
       <legend><strong>Herramientas</strong></legend>
-      <!--ELIMINAR CORRELATIVO -->
-      Eliminar contacto por: <br />Nº Correlativo
-      <input type="number" name="correlativo" style="width: 50px" />
-      <button onclick="">Eliminar</button> <br />
-      <br />
-      <!--BUSCAR CONTACTO-->
+      <!--CORRELATIVO(ELIMINAR Y BUSCAR)-->
+      Nº Correlativo
+      <input
+        onfocus="correlativoMax()"
+        type="number"
+        name="correlativo"
+        id="correlativo"
+        style="width: 50px"
+        min="0"
+        max="0"
+      />
+      <button onclick="eliminarCorrelativo()">Eliminar</button>
+      <button onclick="buscarCorrelativo()">Buscar</button>
+
+      <hr />
+      <!--BUSCAR CONTACTO POR NOMBRE-->
       Buscar contacto por: <br />Nombre o apellido
       <input type="text" name="buscarNombre" id="buscarNombre" size="15" />
-      <button onclick="">Buscar</button> Nº Correlativo
-      <input
-        type="number"
-        name="buscarCorrelativo"
-        id="buscarCorrelativo"
-        style="width: 50px"
-      />
-      <button onclick="">Buscar</button> <br />
+      <button onclick="">Buscar</button>
     </fieldset>
     <!--////CONTACTOS////-->
 
     <fieldset style="background-color: #c7d36f">
       <legend><strong>Contactos</strong></legend>
+      <!--A-->
       <strong>A</strong>
-      <table id="A">
-        <!--A-->
-      </table>
+      <table id="tablaA"></table>
+      <!--B-->
       <strong>B</strong>
-      <table id="B">
-        <!--B-->
-      </table>
+      <table id="tablaB"></table>
+      <!--C-->
       <strong>C</strong>
-      <table id="C">
-        <!--C-->
-      </table>
+      <table id="tablaC"></table>
+      <!--D-->
       <strong>D</strong>
-      <table id="D">
-        <!--D-->
-      </table>
+      <table id="tablaD"></table>
+      <!--E-->
       <strong>E</strong>
-      <table id="E">
-        <!--E-->
-      </table>
+      <table id="tablaE"></table>
+      <!--F-->
       <strong>F</strong>
-      <table id="F">
-        <!--F-->
-      </table>
+      <table id="tablaF"></table>
+      <!--G-->
       <strong>G</strong>
-      <table id="G">
-        <!--G-->
-      </table>
+      <table id="tablaG"></table>
+      <!--H-->
       <strong>H</strong>
-      <table id="H">
-        <!--H-->
-      </table>
+      <table id="tablaH"></table>
+      <!--I-->
       <strong>I</strong>
-      <table id="I">
-        <!--I-->
-      </table>
+      <table id="tablaI"></table>
+      <!--J-->
       <strong>J</strong>
-      <table id="J">
-        <!--J-->
-      </table>
+      <table id="tablaJ"></table>
+      <!--K-->
       <strong>K</strong>
-      <table id="K">
-        <!--K-->
-      </table>
+      <table id="tablaK"></table>
+      <!--L-->
       <strong>L</strong>
-      <table id="L">
-        <!--L-->
-      </table>
+      <table id="tablaL"></table>
+      <!--M-->
       <strong>M</strong>
-      <table id="M">
-        <!--M-->
-      </table>
+      <table id="tablaM"></table>
+      <!--N-->
       <strong>N</strong>
-      <table id="N">
-        <!--N-->
-      </table>
-      <strong>Ñ</strong>
-      <table id="Ñ">
-        <!--Ñ-->
-      </table>
+      <table id="tablaN"></table>
+      <!--O-->
       <strong>O</strong>
-      <table id="O">
-        <!--O-->
-      </table>
+      <table id="tablaO"></table>
+      <!--P-->
       <strong>P</strong>
-      <table id="P">
-        <!--P-->
-      </table>
+      <table id="tablaP"></table>
+      <!--Q-->
       <strong>Q</strong>
-      <table id="Q">
-        <!--Q-->
-      </table>
+      <table id="tablaQ"></table>
+      <!--R-->
       <strong>R</strong>
-      <table id="R">
-        <!--R-->
-      </table>
+      <table id="tablaR"></table>
+      <!--S-->
       <strong>S</strong>
-      <table id="S">
-        <!--S-->
-      </table>
+      <table id="tablaS"></table>
+      <!--T-->
       <strong>T</strong>
-      <table id="T">
-        <!--T-->
-      </table>
+      <table id="tablaT"></table>
+      <!--U-->
       <strong>U</strong>
-      <table id="U">
-        <!--U-->
-      </table>
+      <table id="tablaU"></table>
+      <!--V-->
       <strong>V</strong>
-      <table id="V">
-        <!--V-->
-      </table>
+      <table id="tablaV"></table>
+      <!--W-->
       <strong>W</strong>
-      <table id="W">
-        <!--W-->
-      </table>
+      <table id="tablaW"></table>
+      <!--X-->
       <strong>X</strong>
-      <table id="X">
-        <!--X-->
-      </table>
+      <table id="tablaX"></table>
+      <!--Y-->
       <strong>Y</strong>
-      <table id="Y">
-        <!--Y-->
-      </table>
+      <table id="tablaY"></table>
+      <!--Z-->
       <strong>Z</strong>
-      <table id="Z">
-        <!--Z-->
-      </table>
+      <table id="tablaZ"></table>
     </fieldset>
     <script src="main.js"></script>
   </body>
