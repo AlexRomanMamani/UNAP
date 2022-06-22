@@ -5,38 +5,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Agenda Telefonica</title>
+    <style>
+      body {
+        background-color: #094868;
+        width: 100%;
+      }
+      .registro,
+      .herramientas {
+        height: 50%;
+        width: 60%;
+        background: hsl(226, 79%, 85%);
+        margin: auto;
+        text-align: center;
+      }
+      fieldset {
+        height: 50%;
+        width: 60%;
+        background: hsl(226, 79%, 85%);
+        margin: auto;
+      }
+      legend {
+        background-color: rgb(107, 107, 107);
+        color: white;
+        padding: 5px 10px;
+        text-align: center;
+      }
+      input[type="text"],
+      input[type="email"] {
+        width: 40%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 1px solid #555;
+        outline: none;
+      }
+
+      input[type="number"] {
+        width: 22%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 1px solid #555;
+        outline: none;
+      }
+      input[type="tel"] {
+        width: 40%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 1px solid #555;
+        outline: none;
+      }
+      input[type="text"]:focus,
+      input[type="email"]:focus,
+      input[type="number"]:focus,
+      input[type="tel"]:focus {
+        background-color: #a6daed;
+      }
+      input[type="button"],
+      input[type="submit"] {
+        background-color: #04aa6d;
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+    </style>
   </head>
-  <body style="background-color: #e0deca">
+  <body>
     <!--FORM REGISTRAR DATOS-->
-    <fieldset style="background-color: #c7d36f">
+    <fieldset class="registro">
       <legend><strong>Registrar nuevo Contacto</strong></legend>
       <form>
-        <!--LABEL NOMBRE-->
-        <label for="nombre">Nombre</label>
+        <!--NOMBRE-->
         <input
           type="text"
           name="nombre"
           id="nombre"
           required
-          placeholder="(Requerido)"
+          placeholder="Nombre*"
         />
-        <!--LABEL APELLIDO-->
-        <label for="apellido"> Apellido</label>
+        <!--APELLIDO-->
         <input
           type="text"
           name="apellido"
           id="apellido"
           required
-          placeholder="(Requerido)"
+          placeholder="Apellido*"
         />
-        <!--LABEL DIRECCION-->
-        <label for="direccion">Dirección</label>
-        <input type="text" name="direccion" id="direccion" /> <br />
-        <!--LABEL EMAIL-->
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" />
-        <!--LABEL TELEFONO-->
-        <label for="telefono">Teléfono (max. 9 digitos)</label>
+        <!--DIRECCION-->
+        <input
+          type="text"
+          name="direccion"
+          id="direccion"
+          placeholder="Dirección"
+        />
+
+        <!--EMAIL-->
+        <input type="email" name="email" id="email" placeholder="Email" />
+        <!--TELEFONO-->
         <input
           type="tel"
           id="telefono"
@@ -44,11 +113,16 @@
           pattern="[0-9]{9}"
           required
           maxlength="9"
-          placeholder="(Requerido) "
+          placeholder="Teléfono* (Ej: 912345678)"
         />
-        <!--LABEL ORGANIZACION-->
-        <label for="organizacion">Organización</label>
-        <input type="text" name="organizacion" id="organizacion" /> <br />
+        <!--ORGANIZACION-->
+        <input
+          type="text"
+          name="organizacion"
+          id="organizacion"
+          placeholder="Organización"
+        />
+        <br />
         <!--NUMERO CORRELATIVO-->
         <input type="hidden" name="lastId" id="lastId" value="1" />
         <!--REGISTRAR-->
@@ -58,33 +132,36 @@
         <p id="respuesta"></p>
       </form>
     </fieldset>
-    <!--////HERRAMIENTAS////-->
-    <fieldset style="background-color: #c7d36f">
+    <!--HERRAMIENTAS-->
+    <fieldset class="herramientas">
       <legend><strong>Herramientas</strong></legend>
       <!--CORRELATIVO(ELIMINAR Y BUSCAR)-->
-      Nº Correlativo
       <input
         onfocus="correlativoMax()"
         type="number"
         name="correlativo"
         id="correlativo"
-        style="width: 50px"
         min="0"
         max="0"
-        value="1"
+        placeholder="Nro. Correlativo"
       />
-      <button onclick="eliminarCorrelativo()">Eliminar</button>
-      <button onclick="buscarCorrelativo()">Buscar</button>
+      <input type="button" onclick="eliminarCorrelativo()" value="Eliminar" />
+      <input type="button" onclick="buscarCorrelativo()" value="Buscar" />
 
       <hr />
       <!--BUSCAR CONTACTO POR NOMBRE-->
-      Buscar contacto por: <br />Nombre o apellido
-      <input type="text" name="buscarNombre" id="buscarNombre" size="15" />
-      <button onclick="">Buscar</button>
+      <input
+        type="text"
+        name="buscarNombre"
+        id="buscarNombre"
+        size="15"
+        placeholder="Nombre o Apellido"
+      />
+      <input type="button" onclick="" value="Buscar" />
     </fieldset>
-    <!--////CONTACTOS////-->
+    <!--CONTACTOS-->
 
-    <fieldset style="background-color: #c7d36f">
+    <fieldset>
       <legend><strong>Contactos</strong></legend>
       <!--A-->
       <strong>A</strong>

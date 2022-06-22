@@ -80,21 +80,26 @@ function correlativoMax() {
 }
 
 function eliminarCorrelativo() {
-  //----RESCATAR CUADRO DE BUSQUEDA----
+  //----RESCATAR CUADRO DE BUSQUEDA y PTO RESPUESTA----
   let cuadroBuscar = document.getElementById("correlativo").value;
   let ptoRespuesta = document.getElementById("respuesta");
 
+  //----VALIDAR QUE LA TABLA EXISTA----
+  //----SI EXISTE: ELIMINA TABLA----
+  //----SI NO: "CONTACTO NO ENCONTRADO"----
   if (document.getElementById(cuadroBuscar)) {
-    //----EN QUE TABLA BUSCAR----
-    let filaEliminar = document.getElementById(cuadroBuscar);
+    //----SELECCIONAR FILA A ELIMINAR----
+    let filaEliminar = document.getElementById(cuadroBuscar); //cuadroBuscar=Id de Tabla
 
     //----ELIMINAR FILA----
     filaEliminar.parentNode.removeChild(filaEliminar);
 
-    //----LIMPIAR CUADRO BUSQUEDA----
+    //----LIMPIAR CUADRO BUSQUEDA (no limpia...)----
     cuadroBuscar.value = "";
   } else {
+    //----LIMPIAR CUADRO BUSQUEDA (no limpia...)----
     cuadroBuscar.value = "";
+    //----MUESTRA MENSAJE-----
     ptoRespuesta.setAttribute("style", "color:red");
     ptoRespuesta.textContent = "Contacto no encontrado";
   }
@@ -112,9 +117,12 @@ function buscarCorrelativo() {
   let telefono = document.getElementById("telefono");
   let organizacion = document.getElementById("organizacion");
 
+  //----VALIDAR QUE LA TABLA EXISTA----
+  //----SI EXISTE: MUESTRA TABLA EN FORM----
+  //----SI NO: "CONTACTO NO ENCONTRADO"----
   if (document.getElementById(cuadroBuscar)) {
     //----EN QUE TABLA BUSCAR----
-    let filaBuscar = document.getElementById(cuadroBuscar);
+    let filaBuscar = document.getElementById(cuadroBuscar); //cuadroBuscar=Id de Tabla
 
     //----NO EDITABLES----
     nombre.setAttribute("disabled", true);
@@ -132,9 +140,13 @@ function buscarCorrelativo() {
     telefono.value = filaBuscar.children[5].innerHTML;
     organizacion.value = filaBuscar.children[6].innerHTML;
 
-    //----LIMPIAR RESPUESTA----
+    //----LIMPIAR RESPUESTA (NO LIMPIA...)----
     ptoRespuesta.textContent = "";
+
+    //----LIMPIAR CUADRO BUSQUEDA (no limpia...)----
+    cuadroBuscar.value = "";
   } else {
+    //----LIMPIAR CUADRO BUSQUEDA (no limpia...)----
     cuadroBuscar.value = "";
     ptoRespuesta.setAttribute("style", "color:red");
     ptoRespuesta.textContent = "Contacto no encontrado";
