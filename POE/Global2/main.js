@@ -180,3 +180,30 @@ function limpiar() {
   organizacion.value = "";
   ptoRespuesta.textContent = "";
 }
+
+function buscarNombreApellido() {
+  //----RESCATAR CUADRO DE BUSQUEDA----
+  let cuadroBuscar = document.getElementById("buscarNombre");
+  //----PTO INSERCION----
+  let ptoRespuesta = document.getElementById("respuesta");
+  let nombre = document.getElementById("nombre");
+  let apellido = document.getElementById("apellido");
+  let direccion = document.getElementById("direccion");
+  let email = document.getElementById("email");
+  let telefono = document.getElementById("telefono");
+  let organizacion = document.getElementById("organizacion");
+
+  let ptoFila = document.getElementsByTagName("tr");
+
+  alert("cantidad de tr " + ptoFila.length);
+  alert("cuadro busqueda: " + cuadroBuscar.value);
+
+  for (let i = 0; i < ptoFila.length; i++) {
+    //let asd = "asd" + [i];
+    //alert(asd);
+
+    if (ptoFila[i].children[1].textContent == cuadroBuscar.value) {
+      alert("si, en " + ptoFila[i].id);
+    }
+  }
+}
