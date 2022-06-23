@@ -1,3 +1,7 @@
+function mayusPrimeraLetra(string) {
+  return string[0].toUpperCase() + string.slice(1);
+}
+
 function agregarRegistro() {
   //-------CREACION LINEA Y CELDAS-----
   let nuevaFila = document.createElement("tr");
@@ -19,9 +23,7 @@ function agregarRegistro() {
   let organizacion = document.getElementById("organizacion");
 
   //----TRANSFORMAR 1 LETRA DE APELLIDO A MAYUS----
-  function mayusPrimeraLetra(string) {
-    return string[0].toUpperCase() + string.slice(1);
-  }
+
   apellido.value = mayusPrimeraLetra(apellido.value);
 
   //----RELLENAR CELDAS----
@@ -140,8 +142,8 @@ function buscarCorrelativo() {
     telefono.value = filaBuscar.children[5].innerHTML;
     organizacion.value = filaBuscar.children[6].innerHTML;
 
-    //----LIMPIAR RESPUESTA (NO LIMPIA...)----
-    ptoRespuesta.textContent = "";
+    //----LIMPIAR RESPUESTA----
+    ptoRespuesta.innerText = "";
 
     //----LIMPIAR CUADRO BUSQUEDA (no limpia...)----
     cuadroBuscar.value = "";
@@ -193,17 +195,57 @@ function buscarNombreApellido() {
   let telefono = document.getElementById("telefono");
   let organizacion = document.getElementById("organizacion");
 
+  //----TOMAR TODOS LOS TR----
   let ptoFila = document.getElementsByTagName("tr");
+
+  //----TRANSFORMAR PRIMERA LETRA A MAYUSCULA----
+  cuadroBuscar.value = mayusPrimeraLetra(cuadroBuscar.value);
 
   alert("cantidad de tr " + ptoFila.length);
   alert("cuadro busqueda: " + cuadroBuscar.value);
 
-  for (let i = 0; i < ptoFila.length; i++) {
-    //let asd = "asd" + [i];
-    //alert(asd);
+  //----RECORRER TODOS LOS TR----
+  for (let i = 1; i <= ptoFila.length; i++) {
+    //----SI LA CELDA QUE CONTIENE EL APELLIDO ES IGUAL A CUADRO DE BUSQUEDA----
+    //----O LA CELDA QUE CONTIENE EL NOMBRE ES IGUAL A CUADRO DE BUSQUEDA----
+    //----SI:COPIA DATOS AL FORM----
+    //----NO:MENSAJE----
+    let filaID = document.getElementById(i);
 
-    if (ptoFila[i].children[1].textContent == cuadroBuscar.value) {
-      alert("si, en " + ptoFila[i].id);
+    alert("recorrido: " + [i]);
+    alert(filaID + " FILA ID: " + filaID.id);
+    alert(filaID.children[2].textContent);
+
+    if (filaID.children[2].textContent == cuadroBuscar.value) {
+      alert("si, en fila " + filaID.id);
+
+      //----NO EDITABLES----
+      nombre.setAttribute("disabled", true);
+      apellido.setAttribute("disabled", true);
+      direccion.setAttribute("disabled", true);
+      email.setAttribute("disabled", true);
+      telefono.setAttribute("disabled", true);
+      organizacion.setAttribute("disabled", true);
+
+      //----RELLENAR FORM----
+      apellido.value = filaID.children[1].innerHTML;
+      nombre.value = filaID.children[2].innerHTML;
+      direccion.value = filaID.children[3].innerHTML;
+      email.value = filaID.children[4].innerHTML;
+      telefono.value = filaID.children[5].innerHTML;
+      organizacion.value = filaID.children[6].innerHTML;
+
+      //----LIMPIAR RESPUESTA----
+      ptoRespuesta.innerText = "";
+
+      //----LIMPIAR CUADRO BUSQUEDA----
+      cuadroBuscar.value = "";
+    } else {
+      //----LIMPIAR CUADRO BUSQUEDA (no limpia...)----
+      //cuadroBuscar.value = "";
+      //ptoRespuesta.setAttribute("style", "color:red");
+      //ptoRespuesta.textContent = "Contacto no encontrado";
+      alert("no!");
     }
   }
 }
