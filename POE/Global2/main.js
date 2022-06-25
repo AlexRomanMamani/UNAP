@@ -1,3 +1,13 @@
+function phonenumber(inputtxt) {
+  var phoneno = /^\d{9}$/;
+  if (inputtxt.value.match(phoneno)) {
+    return true;
+  } else {
+    alert("message");
+    return false;
+  }
+}
+
 function mayusPrimeraLetra(string) {
   return string[0].toUpperCase() + string.slice(1);
 }
@@ -19,9 +29,12 @@ function agregarRegistro() {
   let apellido = document.getElementById("apellido");
   let direccion = document.getElementById("direccion");
   let email = document.getElementById("email");
-  let telefono = document.getElementById("telefono");
+  let telefono = document.getElementById("phone");
   let organizacion = document.getElementById("organizacion");
 
+  if (phonenumber(telefono) == false) {
+    return false;
+  }
   //----TRANSFORMAR 1 LETRA DE APELLIDO A MAYUS----
 
   apellido.value = mayusPrimeraLetra(apellido.value);
@@ -116,7 +129,7 @@ function buscarCorrelativo() {
   let apellido = document.getElementById("apellido");
   let direccion = document.getElementById("direccion");
   let email = document.getElementById("email");
-  let telefono = document.getElementById("telefono");
+  let telefono = document.getElementById("phone");
   let organizacion = document.getElementById("organizacion");
 
   //----VALIDAR QUE LA TABLA EXISTA----
@@ -162,7 +175,7 @@ function limpiar() {
   let apellido = document.getElementById("apellido");
   let direccion = document.getElementById("direccion");
   let email = document.getElementById("email");
-  let telefono = document.getElementById("telefono");
+  let telefono = document.getElementById("phone");
   let organizacion = document.getElementById("organizacion");
 
   //----VOLVER EDITABLES----
@@ -192,7 +205,7 @@ function buscarNombreApellido() {
   let apellido = document.getElementById("apellido");
   let direccion = document.getElementById("direccion");
   let email = document.getElementById("email");
-  let telefono = document.getElementById("telefono");
+  let telefono = document.getElementById("phone");
   let organizacion = document.getElementById("organizacion");
 
   //----TOMAR TODOS LOS TR----
@@ -201,10 +214,50 @@ function buscarNombreApellido() {
   //----TRANSFORMAR PRIMERA LETRA A MAYUSCULA----
   cuadroBuscar.value = mayusPrimeraLetra(cuadroBuscar.value);
 
-  alert("cantidad de tr " + ptoFila.length);
-  alert("cuadro busqueda: " + cuadroBuscar.value);
+  let i = 1;
 
-  //----RECORRER TODOS LOS TR----
+  do {
+    let filaID = document.getElementById(i);
+    alert("fila id : " + filaID.id);
+    if (filaID.children[2].textContent == cuadroBuscar.value) {
+      //----NO EDITABLES----
+      nombre.setAttribute("disabled", true);
+      apellido.setAttribute("disabled", true);
+      direccion.setAttribute("disabled", true);
+      email.setAttribute("disabled", true);
+      telefono.setAttribute("disabled", true);
+      organizacion.setAttribute("disabled", true);
+
+      //----RELLENAR FORM----
+      apellido.value = filaID.children[1].innerHTML;
+      nombre.value = filaID.children[2].innerHTML;
+      direccion.value = filaID.children[3].innerHTML;
+      email.value = filaID.children[4].innerHTML;
+      telefono.value = filaID.children[5].innerHTML;
+      organizacion.value = filaID.children[6].innerHTML;
+
+      //----LIMPIAR RESPUESTA----
+      ptoRespuesta.innerText = "";
+
+      //----LIMPIAR CUADRO BUSQUEDA----
+      cuadroBuscar.value = "";
+      i++;
+      alert("Fila dentro del IF: " + filaID.id);
+      return true;
+    }
+  } while (filaID != null);
+
+  //----LIMPIAR CUADRO BUSQUEDA (no limpia...)----
+  cuadroBuscar.value = "";
+  ptoRespuesta.setAttribute("style", "color:red");
+  ptoRespuesta.textContent = "Contacto no encontrado";
+  alert("no!");
+  return false;
+
+  //alert("cantidad de tr " + ptoFila.length);
+  //alert("cuadro busqueda: " + cuadroBuscar.value);
+  /*
+  //----RECORRER TODOS LOS TR (MALO!!!!!_ARREGLAR)----
   for (let i = 1; i <= ptoFila.length; i++) {
     //----SI LA CELDA QUE CONTIENE EL APELLIDO ES IGUAL A CUADRO DE BUSQUEDA----
     //----O LA CELDA QUE CONTIENE EL NOMBRE ES IGUAL A CUADRO DE BUSQUEDA----
@@ -240,6 +293,7 @@ function buscarNombreApellido() {
 
       //----LIMPIAR CUADRO BUSQUEDA----
       cuadroBuscar.value = "";
+      return;
     } else {
       //----LIMPIAR CUADRO BUSQUEDA (no limpia...)----
       //cuadroBuscar.value = "";
@@ -247,5 +301,5 @@ function buscarNombreApellido() {
       //ptoRespuesta.textContent = "Contacto no encontrado";
       alert("no!");
     }
-  }
+  }*/
 }
