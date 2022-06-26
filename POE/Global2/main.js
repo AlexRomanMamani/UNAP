@@ -196,7 +196,7 @@ function limpiar() {
   ptoRespuesta.textContent = "";
 }
 
-function buscarNombreApellido() {
+function buscarNombre() {
   //----RESCATAR CUADRO DE BUSQUEDA----
   let cuadroBuscar = document.getElementById("buscarNombre");
   //----PTO INSERCION----
@@ -213,11 +213,13 @@ function buscarNombreApellido() {
 
   //----TRANSFORMAR PRIMERA LETRA A MAYUSCULA----
   cuadroBuscar.value = mayusPrimeraLetra(cuadroBuscar.value);
-
+  /*
   let i = 1;
 
   do {
+    alert("hola" + i);
     let filaID = document.getElementById(i);
+
     alert("fila id : " + filaID.id);
     if (filaID.children[2].textContent == cuadroBuscar.value) {
       //----NO EDITABLES----
@@ -240,23 +242,26 @@ function buscarNombreApellido() {
       ptoRespuesta.innerText = "";
 
       //----LIMPIAR CUADRO BUSQUEDA----
-      cuadroBuscar.value = "";
-      i++;
+      //cuadroBuscar.value = "";
+
       alert("Fila dentro del IF: " + filaID.id);
-      return true;
+      //return true;
     }
-  } while (filaID != null);
+    i++;
+    alert("conteo i : " + i);
+    alert(filaID + "id: " + filaID.id);
+  } while (filaID);
 
   //----LIMPIAR CUADRO BUSQUEDA (no limpia...)----
-  cuadroBuscar.value = "";
-  ptoRespuesta.setAttribute("style", "color:red");
-  ptoRespuesta.textContent = "Contacto no encontrado";
-  alert("no!");
-  return false;
+  //cuadroBuscar.value = "";
+  //ptoRespuesta.setAttribute("style", "color:red");
+  //ptoRespuesta.textContent = "Contacto no encontrado";
+  //alert("no!");
+  return false;*/
 
-  //alert("cantidad de tr " + ptoFila.length);
-  //alert("cuadro busqueda: " + cuadroBuscar.value);
-  /*
+  alert("cantidad de tr " + ptoFila.length);
+  alert("cuadro busqueda: " + cuadroBuscar.value);
+
   //----RECORRER TODOS LOS TR (MALO!!!!!_ARREGLAR)----
   for (let i = 1; i <= ptoFila.length; i++) {
     //----SI LA CELDA QUE CONTIENE EL APELLIDO ES IGUAL A CUADRO DE BUSQUEDA----
@@ -265,12 +270,25 @@ function buscarNombreApellido() {
     //----NO:MENSAJE----
     let filaID = document.getElementById(i);
 
-    alert("recorrido: " + [i]);
-    alert(filaID + " FILA ID: " + filaID.id);
-    alert(filaID.children[2].textContent);
-
-    if (filaID.children[2].textContent == cuadroBuscar.value) {
-      alert("si, en fila " + filaID.id);
+    alert(
+      "recorrido: " +
+        [i] +
+        "\n" +
+        filaID +
+        " FILA ID: " +
+        filaID.id +
+        "\n" +
+        "Apellido: " +
+        filaID.children[1].textContent +
+        "  Nombre: " +
+        filaID.children[2].textContent
+    );
+    //----SI NOMBRE O APELLIDO SON IGUAL A cuadroBuscar.value----
+    if (
+      filaID.children[2].textContent == cuadroBuscar.value ||
+      filaID.children[1].textContent == cuadroBuscar.value
+    ) {
+      alert("Exito!!! esta en esta fila :D -> " + filaID.id);
 
       //----NO EDITABLES----
       nombre.setAttribute("disabled", true);
@@ -294,12 +312,10 @@ function buscarNombreApellido() {
       //----LIMPIAR CUADRO BUSQUEDA----
       cuadroBuscar.value = "";
       return;
-    } else {
-      //----LIMPIAR CUADRO BUSQUEDA (no limpia...)----
-      //cuadroBuscar.value = "";
-      //ptoRespuesta.setAttribute("style", "color:red");
-      //ptoRespuesta.textContent = "Contacto no encontrado";
-      alert("no!");
     }
-  }*/
+  }
+  //----EN CASO DE QUE NO ENCUENTRE EL CONTACTO----
+  cuadroBuscar.value = "";
+  ptoRespuesta.setAttribute("style", "color:red");
+  ptoRespuesta.textContent = "Contacto no encontrado";
 }

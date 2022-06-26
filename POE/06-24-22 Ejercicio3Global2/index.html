@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1>Paginas favoritas</h1>
+
+    <table id="tablaA">
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>URL</th>
+        </tr>
+    </table>
+
+    <table id="tablaB">
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>URL</th>
+        </tr>
+    </table>
+
+    <ul id = "paginas"> 
+        <li> 
+            <a href="http://www.unap.cl">Unap</a>
+        </li>
+        <li>
+            <a href="http://www.google.cl">Google</a>
+        </li>
+        <li>
+            <a href="http://w3schools.com">W3schools</a>
+        </li>
+    </ul>
+    
+    <br>
+    <input type="hidden" name="lastId" id="lastId" value="0">
+    <input type="text" name="nombrePagina" id="nombrePagina" placeholder="Ingrese Nombre">
+    <input type="url" name="urlPagina" id="urlPagina" placeholder="Ingrese URL">
+    <button onclick="agregarUrl2()" id="btnAgregar">Agregar</button> 
+    <button onclick="fnLimpiar()" id="btnAgregar">Limpiar</button><br>
+    <input type="text" name="buscar" id="buscar" placeholder="Ingrese Búsqueda">
+    <button onclick="buscarUrl()">Buscar</button> 
+    <input type="number" name="delNumber" id="delNumber" min="0" max="0" value="0" >
+    <button onclick="borrarUrl()">Borrar</button><br>
+    <input type="text" name="buscarDoble" id="buscarDoble" placeholder="Ingrese Búsqueda">
+    <button onclick="buscarUrlDoble()">Buscar</button> 
+    <div id="resultado">
+
+
+        
+    </div>
+</body>
+</html>
