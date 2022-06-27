@@ -3,13 +3,9 @@ function phonenumber(inputtxt) {
   if (inputtxt.value.match(phoneno)) {
     return true;
   } else {
-    alert("message");
+    alert("El campo telefono es requerido: \n");
     return false;
   }
-}
-
-function mayusPrimeraLetra(string) {
-  return string[0].toUpperCase() + string.slice(1);
 }
 
 function agregarRegistro() {
@@ -32,12 +28,14 @@ function agregarRegistro() {
   let telefono = document.getElementById("phone");
   let organizacion = document.getElementById("organizacion");
 
+  //----VALIDAR TELEFONO----
   if (phonenumber(telefono) == false) {
     return false;
   }
-  //----TRANSFORMAR 1 LETRA DE APELLIDO A MAYUS----
+  //----TRANSFORMAR A MAYUS----
 
-  apellido.value = mayusPrimeraLetra(apellido.value);
+  nombre.value = nombre.value.toUpperCase();
+  apellido.value = apellido.value.toUpperCase();
 
   //----RELLENAR CELDAS----
   nuevaCelda1.textContent = lastId.value;
@@ -63,12 +61,13 @@ function agregarRegistro() {
   nuevaFila.appendChild(nuevaCelda6);
   nuevaFila.appendChild(nuevaCelda7);
 
-  //----CORRELATIVO++------
+  //----CORRELATIVO------
   nuevaFila.id = lastId.value;
+  nuevaFila.className = "filas";
   lastId.value++;
 
   //----SACAR PRIMERA LETRA DE APELLIDO----
-  let primeraLetra = apellido.value[0].toUpperCase();
+  let primeraLetra = apellido.value[0];
 
   //----ELEGIR TABLA CORRESPONDIENTE ABC----
   let tabla = document.getElementById("tabla" + primeraLetra);
@@ -103,6 +102,7 @@ function eliminarCorrelativo() {
   //----SI EXISTE: ELIMINA TABLA----
   //----SI NO: "CONTACTO NO ENCONTRADO"----
   if (document.getElementById(cuadroBuscar)) {
+    alert("Se ha eliminado el contacto n°: " + cuadroBuscar);
     //----SELECCIONAR FILA A ELIMINAR----
     let filaEliminar = document.getElementById(cuadroBuscar); //cuadroBuscar=Id de Tabla
 
@@ -131,6 +131,7 @@ function buscarCorrelativo() {
   let email = document.getElementById("email");
   let telefono = document.getElementById("phone");
   let organizacion = document.getElementById("organizacion");
+  let btnRegistrar = document.getElementById("btnRegistrar");
 
   //----VALIDAR QUE LA TABLA EXISTA----
   //----SI EXISTE: MUESTRA TABLA EN FORM----
@@ -146,6 +147,7 @@ function buscarCorrelativo() {
     email.setAttribute("disabled", true);
     telefono.setAttribute("disabled", true);
     organizacion.setAttribute("disabled", true);
+    btnRegistrar.setAttribute("disabled", true);
 
     //----RELLENAR FORM----
     apellido.value = filaBuscar.children[1].innerHTML;
@@ -177,6 +179,7 @@ function limpiar() {
   let email = document.getElementById("email");
   let telefono = document.getElementById("phone");
   let organizacion = document.getElementById("organizacion");
+  let btnRegistrar = document.getElementById("btnRegistrar");
 
   //----VOLVER EDITABLES----
   nombre.removeAttribute("disabled");
@@ -185,6 +188,7 @@ function limpiar() {
   email.removeAttribute("disabled");
   telefono.removeAttribute("disabled");
   organizacion.removeAttribute("disabled");
+  btnRegistrar.removeAttribute("disabled");
 
   //----LIMPIAR FORM----
   apellido.value = "";
@@ -209,68 +213,24 @@ function buscarNombre() {
   let organizacion = document.getElementById("organizacion");
 
   //----TOMAR TODOS LOS TR----
-  let ptoFila = document.getElementsByTagName("tr");
+  let ptoFila = document.getElementsByClassName("filas");
 
-  //----TRANSFORMAR PRIMERA LETRA A MAYUSCULA----
-  cuadroBuscar.value = mayusPrimeraLetra(cuadroBuscar.value);
-  /*
-  let i = 1;
+  //----TRANSFORMAR CUADRO BUSQUEDA A MAYUS----
+  cuadroBuscar.value = cuadroBuscar.value.toUpperCase();
 
-  do {
-    alert("hola" + i);
-    let filaID = document.getElementById(i);
-
-    alert("fila id : " + filaID.id);
-    if (filaID.children[2].textContent == cuadroBuscar.value) {
-      //----NO EDITABLES----
-      nombre.setAttribute("disabled", true);
-      apellido.setAttribute("disabled", true);
-      direccion.setAttribute("disabled", true);
-      email.setAttribute("disabled", true);
-      telefono.setAttribute("disabled", true);
-      organizacion.setAttribute("disabled", true);
-
-      //----RELLENAR FORM----
-      apellido.value = filaID.children[1].innerHTML;
-      nombre.value = filaID.children[2].innerHTML;
-      direccion.value = filaID.children[3].innerHTML;
-      email.value = filaID.children[4].innerHTML;
-      telefono.value = filaID.children[5].innerHTML;
-      organizacion.value = filaID.children[6].innerHTML;
-
-      //----LIMPIAR RESPUESTA----
-      ptoRespuesta.innerText = "";
-
-      //----LIMPIAR CUADRO BUSQUEDA----
-      //cuadroBuscar.value = "";
-
-      alert("Fila dentro del IF: " + filaID.id);
-      //return true;
-    }
-    i++;
-    alert("conteo i : " + i);
-    alert(filaID + "id: " + filaID.id);
-  } while (filaID);
-
-  //----LIMPIAR CUADRO BUSQUEDA (no limpia...)----
-  //cuadroBuscar.value = "";
-  //ptoRespuesta.setAttribute("style", "color:red");
-  //ptoRespuesta.textContent = "Contacto no encontrado";
-  //alert("no!");
-  return false;*/
-
-  alert("cantidad de tr " + ptoFila.length);
-  alert("cuadro busqueda: " + cuadroBuscar.value);
+  //alert("cantidad de tr " + ptoFila.length);
+  //alert("cuadro busqueda: " + cuadroBuscar.value);
 
   //----RECORRER TODOS LOS TR (MALO!!!!!_ARREGLAR)----
-  for (let i = 1; i <= ptoFila.length; i++) {
+  for (let i = 0; i < ptoFila.length; i++) {
     //----SI LA CELDA QUE CONTIENE EL APELLIDO ES IGUAL A CUADRO DE BUSQUEDA----
     //----O LA CELDA QUE CONTIENE EL NOMBRE ES IGUAL A CUADRO DE BUSQUEDA----
     //----SI:COPIA DATOS AL FORM----
     //----NO:MENSAJE----
-    let filaID = document.getElementById(i);
+    //let filaID = document.getElementById(i);
+    let filaID = document.getElementById(ptoFila[i].id);
 
-    alert(
+    /*alert(
       "recorrido: " +
         [i] +
         "\n" +
@@ -282,13 +242,13 @@ function buscarNombre() {
         filaID.children[1].textContent +
         "  Nombre: " +
         filaID.children[2].textContent
-    );
+    );*/
     //----SI NOMBRE O APELLIDO SON IGUAL A cuadroBuscar.value----
     if (
       filaID.children[2].textContent == cuadroBuscar.value ||
       filaID.children[1].textContent == cuadroBuscar.value
     ) {
-      alert("Exito!!! esta en esta fila :D -> " + filaID.id);
+      //alert("Exito!!! esta en esta fila :D -> " + filaID.id);
 
       //----NO EDITABLES----
       nombre.setAttribute("disabled", true);
@@ -318,4 +278,26 @@ function buscarNombre() {
   cuadroBuscar.value = "";
   ptoRespuesta.setAttribute("style", "color:red");
   ptoRespuesta.textContent = "Contacto no encontrado";
+}
+
+//https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
+//Get the button:
+mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function () {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
