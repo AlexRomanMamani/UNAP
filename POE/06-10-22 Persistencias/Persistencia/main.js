@@ -15,4 +15,16 @@ let nombre2 = localStorage.getItem("nm");
 document.write(arreglo);
 
 //ELIMINAR ITEM DEL LOCALSTORAGE
-localStorage.removeItem("nm");
+//localStorage.removeItem("nm");
+
+let objeto = {
+  nombre: "Alex",
+  edad: 33,
+  correo: "alex@correo.cl",
+};
+
+localStorage.setItem("intentoObjeto", JSON.stringify(objeto));
+
+let json = JSON.parse(localStorage.getItem("intentoObjeto"));
+
+console.log(json);
