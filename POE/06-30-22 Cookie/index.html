@@ -7,8 +7,14 @@
     <title>Document</title>
     <script src="main.js"></script>
   </head>
-  <body onload="checkCookie('nombre')">
-    <button onclick="getCookie('nombre')">getCookie</button>
-    <button onclick="codeArray([1,2,3,4,5,'hola'])">codeArray</button>
+  <body>
+    <button onclick="setCookie('cookie2', 'SOFIA', 5)">setCookie</button>
+    <button onclick="alert(getCookie('cookie1'))">getCookie</button>
+    <button onclick="checkCookie('cookie2')">checkCookie</button>
+    <button onclick="setCookie('arreglo', codeArray([1,2,3,4,5,'HOLA']), 10)">
+      codeArray
+      <button onclick="decodeArray('arreglo',5)">decodeArray</button>
+      <button onclick="delCookie('arreglo')">delCookie</button>
+    </button>
   </body>
 </html>

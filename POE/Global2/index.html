@@ -66,6 +66,12 @@
         margin: 4px 2px;
         cursor: pointer;
       }
+      input[type="button"]:disabled,
+      input[type="submit"]:disabled {
+        background: #3a544b;
+        color: #ccc;
+        cursor: no-drop;
+      }
       th {
         color: hsl(0, 0%, 100%);
         border: 1px solid rgb(0, 0, 0);
@@ -115,7 +121,7 @@
       }
     </style>
   </head>
-  <body id="body">
+  <body id="body" onload="cargarCookies()">
     <h1>LISTIN TELEFONICO</h1>
     <!--FORM REGISTRAR DATOS-->
     <fieldset class="registro">
@@ -151,7 +157,7 @@
           type="tel"
           id="phone"
           name="phone"
-          placeholder="Teléfono* (Ej: 912345678"
+          placeholder="Teléfono* (Ej: 912345678)"
           pattern="[0-9]{9}"
           required
         />
@@ -165,7 +171,9 @@
         <br />
         <!--NUMERO CORRELATIVO-->
         <input type="hidden" name="lastId" id="lastId" value="1" />
-        <!--REGISTRAR-->
+        <!--ID PARA EDITAR-->
+        <input type="hidden" name="idEditar" id="idEditar" value="0" />
+        <!--BTN REGISTRAR-->
         <input
           type="submit"
           id="btnRegistrar"
@@ -173,7 +181,20 @@
           onclick="agregarRegistro()"
         />
         <!--BTN BORRAR INFORMACION-->
-        <input type="button" value="Limpiar" onclick="limpiar()" />
+        <input
+          type="button"
+          value="Limpiar"
+          id="btnLimpiar"
+          onclick="limpiar()"
+        />
+        <!--BTN EDITAR-->
+        <input
+          type="button"
+          value="Editar"
+          id="btnEditar"
+          onclick="editar()"
+          disabled
+        />
         <p id="respuesta"></p>
       </form>
     </fieldset>
