@@ -18,6 +18,8 @@ function setCookie(cname, cvalue, cexp) {
   //setear cookie
   document.cookie = nuestra_cookie;
 }
+
+// Viernes 02/07/22
 // OBTENER COOKIE
 // getCookie recupera la informacion de la cookie name
 // cname: es el nombre de la cookie
