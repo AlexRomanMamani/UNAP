@@ -362,7 +362,7 @@ function editar() {
   btnRegistrar.removeAttribute("disabled");
 
   //----DESABILITAR BTN'S----
-  btnLimpiar.setAttribute("disabled", true);
+  //btnLimpiar.setAttribute("disabled", true);
   btnEditar.setAttribute("disabled", true);
 
   //----TOMAR ID DE LA FILA A ELIMINAR----
@@ -370,6 +370,11 @@ function editar() {
 
   //----ELIMINAR FILA----
   delTr.parentNode.removeChild(delTr);
+
+  //----ELIMINAR COOKIE----
+
+  alert("contacto" + idEditar.value);
+  delCookie("contacto" + idEditar.value);
 }
 
 function setCookie(cname, cvalue, cexp) {
@@ -388,13 +393,15 @@ function setCookie(cname, cvalue, cexp) {
 }
 
 function codeArray(arreglo) {
+  //console.log(arreglo);
   return JSON.stringify(arreglo); //codifica el arreglo a JSON
 }
 
 function cargarCookies() {
-  alert(document.cookie);
+  //alert(document.cookie);
   let ca = document.cookie.split(";"); //cookie separada
   alert(ca.length);
+  alert(document.cookie);
 
   for (let i = 1; i <= ca.length; i++) {
     //-------CREACION LINEA Y CELDAS-----
@@ -407,14 +414,7 @@ function cargarCookies() {
     let nuevaCelda6 = document.createElement("td");
     let nuevaCelda7 = document.createElement("td");
 
-    //----RESCATAR DATOS DE COOKIE----
-    // let arregloDecoded = [];
-    // arregloDecoded[1] = decodeArray("contacto1", 1);
-    // arregloDecoded[2] = decodeArray("contacto1", 2);
-    // arregloDecoded[3] = decodeArray("contacto1", 3);
-    // arregloDecoded[4] = decodeArray("contacto1", 4);
-    // arregloDecoded[5] = decodeArray("contacto1", 5);
-    // arregloDecoded[6] = decodeArray("contacto1", 6);
+    alert(ca[0]);
 
     //----RESCATAR VALUE DECODED DE COOKIE----
     let lastId = document.getElementById("lastId");
@@ -425,28 +425,6 @@ function cargarCookies() {
     let telefono = decodeArray("contacto" + [i], 5);
     let organizacion = decodeArray("contacto" + [i], 6);
     alert(apellido);
-    //----(EDITAR) CREAR ARRAY----
-
-    // let arreglo = [];
-    // arreglo[0] = lastId.value;
-    // arreglo[1] = nombre.value;
-    // arreglo[2] = apellido.value;
-    // arreglo[3] = direccion.value;
-    // arreglo[4] = email.value;
-    // arreglo[5] = telefono.value;
-    // arreglo[6] = organizacion.value;
-
-    // //----SETEAR ARREGLO COMO COOKIE
-    // setCookie("contacto" + lastId.value, codeArray(arreglo), 5);
-
-    //----VALIDAR TELEFONO----
-    // if (phonenumber(telefono) == false) {
-    //   return false;
-    // }
-    //----TRANSFORMAR A MAYUS----
-
-    // nombre.value = nombre.value.toUpperCase();
-    // apellido.value = apellido.value.toUpperCase();
 
     //----RELLENAR CELDAS----
     nuevaCelda1.textContent = lastId.value;
@@ -485,17 +463,6 @@ function cargarCookies() {
 
     //----INSERTAR FILA A TABLA----
     tabla.prepend(nuevaFila);
-
-    //----LIMPIAR CAMPOS DEL FORM----
-    // nombre.value = "";
-    // apellido.value = "";
-    // direccion.value = "";
-    // email.value = "";
-    // telefono.value = "";
-    // organizacion.value = "";
-
-    //----HABILITAR BTNLIMPIAR (EDITAR)-----
-    // btnLimpiar.removeAttribute("disabled");
   }
 }
 
@@ -529,4 +496,9 @@ function getCookie(cname) {
   }
   alert("no se encontro");
   return "";
+}
+function delCookie(cname) {
+  let nuestra_cookie = cname + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+
+  document.cookie = nuestra_cookie;
 }

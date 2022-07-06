@@ -34,7 +34,7 @@ function getCookie(cname) {
 
   for (let i = 0; i < ca.length; i++) {
     let c = ca[i];
-
+    console.log(c);
     while (c.charAt(0) == " ") {
       //previene tomar espacios vacios
       c = c.substring(1);
