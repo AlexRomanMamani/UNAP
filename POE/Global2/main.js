@@ -403,68 +403,75 @@ function cargarCookies() {
   alert(ca.length);
   alert(document.cookie);
 
-  for (let i = 1; i <= ca.length; i++) {
-    //-------CREACION LINEA Y CELDAS-----
-    let nuevaFila = document.createElement("tr");
-    let nuevaCelda1 = document.createElement("td");
-    let nuevaCelda2 = document.createElement("td");
-    let nuevaCelda3 = document.createElement("td");
-    let nuevaCelda4 = document.createElement("td");
-    let nuevaCelda5 = document.createElement("td");
-    let nuevaCelda6 = document.createElement("td");
-    let nuevaCelda7 = document.createElement("td");
+  // while (ca.length > 0) {
+  //   let c = ca.pop(); //elimina el ultimo elemento del arreglo
+  //   let cname = c.split("=")[0]; //elimina el valor de la cookie
+  //   let cvalue = c.split("=")[1]; //elimina el nombre de la cookie
+  //   alert(cname + " " + cvalue);
+  // }
+    
+//   for (let i = 1; i <= ca.length; i++) {
+//     //-------CREACION LINEA Y CELDAS-----
+//     let nuevaFila = document.createElement("tr");
+//     let nuevaCelda1 = document.createElement("td");
+//     let nuevaCelda2 = document.createElement("td");
+//     let nuevaCelda3 = document.createElement("td");
+//     let nuevaCelda4 = document.createElement("td");
+//     let nuevaCelda5 = document.createElement("td");
+//     let nuevaCelda6 = document.createElement("td");
+//     let nuevaCelda7 = document.createElement("td");
 
-    alert(ca[0]);
+//     alert(ca[0]);
 
-    //----RESCATAR VALUE DECODED DE COOKIE----
-    let lastId = document.getElementById("lastId");
-    let nombre = decodeArray("contacto" + [i], 1);
-    let apellido = decodeArray("contacto" + [i], 2);
-    let direccion = decodeArray("contacto" + [i], 3);
-    let email = decodeArray("contacto" + [i], 4);
-    let telefono = decodeArray("contacto" + [i], 5);
-    let organizacion = decodeArray("contacto" + [i], 6);
-    alert(apellido);
+//     //----RESCATAR VALUE DECODED DE COOKIE----
+//     let lastId = document.getElementById("lastId");
+//     let nombre = decodeArray("contacto" + [i], 1);
+//     let apellido = decodeArray("contacto" + [i], 2);
+//     let direccion = decodeArray("contacto" + [i], 3);
+//     let email = decodeArray("contacto" + [i], 4);
+//     let telefono = decodeArray("contacto" + [i], 5);
+//     let organizacion = decodeArray("contacto" + [i], 6);
+//     alert(apellido);
 
-    //----RELLENAR CELDAS----
-    nuevaCelda1.textContent = lastId.value;
-    nuevaCelda2.textContent = nombre;
-    nuevaCelda3.textContent = apellido;
-    nuevaCelda4.textContent = direccion;
-    nuevaCelda5.textContent = email;
-    nuevaCelda6.textContent = telefono;
-    nuevaCelda7.textContent = organizacion;
-    alert(nuevaCelda2.textContent);
-    //----ESCONDER CELDAS----
-    nuevaCelda4.setAttribute("hidden", true);
-    nuevaCelda5.setAttribute("hidden", true);
-    nuevaCelda6.setAttribute("hidden", true);
-    nuevaCelda7.setAttribute("hidden", true);
+//     //----RELLENAR CELDAS----
+//     nuevaCelda1.textContent = lastId.value;
+//     nuevaCelda2.textContent = nombre;
+//     nuevaCelda3.textContent = apellido;
+//     nuevaCelda4.textContent = direccion;
+//     nuevaCelda5.textContent = email;
+//     nuevaCelda6.textContent = telefono;
+//     nuevaCelda7.textContent = organizacion;
+//     alert(nuevaCelda2.textContent);
+//     //----ESCONDER CELDAS----
+//     nuevaCelda4.setAttribute("hidden", true);
+//     nuevaCelda5.setAttribute("hidden", true);
+//     nuevaCelda6.setAttribute("hidden", true);
+//     nuevaCelda7.setAttribute("hidden", true);
 
-    //----AGREGAR CELDAS A FILA----
-    nuevaFila.prepend(nuevaCelda1);
-    nuevaFila.appendChild(nuevaCelda3);
-    nuevaFila.appendChild(nuevaCelda2);
-    nuevaFila.appendChild(nuevaCelda4);
-    nuevaFila.appendChild(nuevaCelda5);
-    nuevaFila.appendChild(nuevaCelda6);
-    nuevaFila.appendChild(nuevaCelda7);
+//     //----AGREGAR CELDAS A FILA----
+//     nuevaFila.prepend(nuevaCelda1);
+//     nuevaFila.appendChild(nuevaCelda3);
+//     nuevaFila.appendChild(nuevaCelda2);
+//     nuevaFila.appendChild(nuevaCelda4);
+//     nuevaFila.appendChild(nuevaCelda5);
+//     nuevaFila.appendChild(nuevaCelda6);
+//     nuevaFila.appendChild(nuevaCelda7);
 
-    //----CORRELATIVO------
-    nuevaFila.id = lastId.value;
-    nuevaFila.className = "filas";
-    lastId.value++;
+//     //----CORRELATIVO------
+//     nuevaFila.id = lastId.value;
+//     nuevaFila.className = "filas";
+//     lastId.value++;
 
-    //----SACAR PRIMERA LETRA DE APELLIDO----
-    let primeraLetra = apellido.charAt(0);
+//     //----SACAR PRIMERA LETRA DE APELLIDO----
+//     let primeraLetra = apellido.charAt(0);
 
-    //----ELEGIR TABLA CORRESPONDIENTE ABC----
-    let tabla = document.getElementById("tabla" + primeraLetra);
+//     //----ELEGIR TABLA CORRESPONDIENTE ABC----
+//     let tabla = document.getElementById("tabla" + primeraLetra);
 
-    //----INSERTAR FILA A TABLA----
-    tabla.prepend(nuevaFila);
-  }
-}
+//     //----INSERTAR FILA A TABLA----
+//     tabla.prepend(nuevaFila);
+//   }
+// }
 
 function decodeArray(ccode, pos) {
   //JSON.parse(value de la cookie)

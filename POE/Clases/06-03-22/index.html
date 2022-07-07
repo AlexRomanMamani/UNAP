@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="cuerpo">
+      <p>Parrafo 1</p>
+      <p>Parrafo 2</p>
+      <p id="p3">Parrafo 3</p>
+      <p id="p4">Parrafo 4</p>
+      <p id="p5">Parrafo 5</p>
+      <p id="p6"></p>
+      <!--SCRIPT SRC DEBE ESTAR DONDE SE QUIERA INSERTAR-->
+      <script src="main.js"></script>
+
+      <button onclick="generarParrafos()">Agregar Parrafos</button>
+
+      <!-- <button onclick="eliminarParrafos()">Eliminar Parrafos</button> -->
+
+      <button class="btn-deleteParagraph">Borrar ultimo parrafos</button>
+      <script type="text/javascript">
+        document
+          .querySelector(".btn-deleteParagraph")
+          .addEventListener("click", () => {
+            const parrafos = document.querySelectorAll("p");
+            if (!!parrafos.length) parrafos[parrafos.length - 1].remove();
+          });
+      </script>
+    </div>
+  </body>
+</html>
