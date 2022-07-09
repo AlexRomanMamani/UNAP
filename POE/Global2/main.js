@@ -40,6 +40,13 @@ function agregarRegistro() {
     return false;
   }
 
+  // if (document.getElementById(lastId.value)) {
+  //   alert("Elemento ya existente");
+  //   //return (lastId.value = lastId.value + 1);
+  // } else {
+  //   alert("Elemento no existente");
+  // }
+
   // let existente = document.getElementById(lastId.value);
   // alert(existente.value);
   // if (lastId.value == existente.id) {
@@ -130,6 +137,11 @@ function eliminarCorrelativo() {
   //----SI NO: "CONTACTO NO ENCONTRADO"----
   if (document.getElementById(cuadroBuscar)) {
     alert("Se ha eliminado el contacto n°: " + cuadroBuscar);
+
+    //----ELIMINAR COOKIE----
+    alert("contacto" + cuadroBuscar);
+    delCookie("contacto" + cuadroBuscar);
+
     //----SELECCIONAR FILA A ELIMINAR----
     let filaEliminar = document.getElementById(cuadroBuscar); //cuadroBuscar=Id de Tabla
 
@@ -381,7 +393,7 @@ function editar() {
 
   //----ELIMINAR COOKIE----
 
-  alert("contacto" + idEditar.value);
+  //alert("contacto" + idEditar.value);
   delCookie("contacto" + idEditar.value);
 }
 
@@ -412,6 +424,7 @@ function cargarCookies() {
   //alert(document.cookie);
 
   let i = 0;
+  let mayor = -1;
   do {
     if (ca[i] != "") {
       let c = ca[i].split("="); //cada cookie separada por =
@@ -438,6 +451,11 @@ function cargarCookies() {
       let organizacion = decodeArray(cname, 6);
       //alert(lastId);
 
+      let lastIdNum = parseInt(lastId);
+
+      if (lastIdNum > mayor) {
+        mayor = lastIdNum;
+      }
       //----(EDITAR) CREAR ARRAY----
 
       // let arreglo = [];
@@ -493,6 +511,12 @@ function cargarCookies() {
     }
     i++;
   } while (i < ca.length);
+
+  //----SETEAR COOKIE CONTACTO MAS RECIENTE----
+  let idCorrelativo = document.getElementById("lastId");
+
+  //----REESCRIBIR CORRELATIVO----
+  idCorrelativo.value = mayor + 1;
 }
 
 function decodeArray(ccode, pos) {
