@@ -40,20 +40,6 @@ function agregarRegistro() {
     return false;
   }
 
-  // if (document.getElementById(lastId.value)) {
-  //   alert("Elemento ya existente");
-  //   //return (lastId.value = lastId.value + 1);
-  // } else {
-  //   alert("Elemento no existente");
-  // }
-
-  // let existente = document.getElementById(lastId.value);
-  // alert(existente.value);
-  // if (lastId.value == existente.id) {
-  //   alert("El ID ya existe");
-  //   //return lastId.value++;
-  // } else {
-  // }
   //----(EDITAR) CREAR ARRAY----
 
   let arreglo = [];
@@ -139,7 +125,7 @@ function eliminarCorrelativo() {
     alert("Se ha eliminado el contacto n°: " + cuadroBuscar);
 
     //----ELIMINAR COOKIE----
-    alert("contacto" + cuadroBuscar);
+    //alert("contacto" + cuadroBuscar);
     delCookie("contacto" + cuadroBuscar);
 
     //----SELECCIONAR FILA A ELIMINAR----
@@ -148,10 +134,10 @@ function eliminarCorrelativo() {
     //----ELIMINAR FILA----
     filaEliminar.parentNode.removeChild(filaEliminar);
 
-    //----LIMPIAR CUADRO BUSQUEDA (no limpia...)----
+    //----LIMPIAR CUADRO BUSQUEDA ----
     cuadroBuscar.value = "";
   } else {
-    //----LIMPIAR CUADRO BUSQUEDA (no limpia...)----
+    //----LIMPIAR CUADRO BUSQUEDA ----
     cuadroBuscar.value = "";
     //----MUESTRA MENSAJE-----
     ptoRespuesta.setAttribute("style", "color:red");
@@ -280,19 +266,6 @@ function buscarNombre() {
     //let filaID = document.getElementById(i);
     let filaID = document.getElementById(ptoFila[i].id);
 
-    /*alert(
-      "recorrido: " +
-        [i] +
-        "\n" +
-        filaID +
-        " FILA ID: " +
-        filaID.id +
-        "\n" +
-        "Apellido: " +
-        filaID.children[1].textContent +
-        "  Nombre: " +
-        filaID.children[2].textContent
-    );*/
     //----SI NOMBRE O APELLIDO SON IGUAL A cuadroBuscar.value----
     if (
       filaID.children[2].textContent == cuadroBuscar.value ||
@@ -339,7 +312,7 @@ function buscarNombre() {
 //Get the button:
 mybutton = document.getElementById("myBtn");
 
-// When the user scrolls down 20px from the top of the document, show the button
+// (W3schools) When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function () {
   scrollFunction();
 };
@@ -352,7 +325,7 @@ function scrollFunction() {
   }
 }
 
-// When the user clicks on the button, scroll to the top of the document
+// (W3schools) When the user clicks on the button, scroll to the top of the document
 function topFunction() {
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
@@ -407,7 +380,7 @@ function setCookie(cname, cvalue, cexp) {
   //nombre=Alex; expires= fecha
   let nuestra_cookie = cname + "=" + cvalue + "; expires=" + d.toUTCString(); //construccion de cookie
 
-  alert(nuestra_cookie);
+  //alert(nuestra_cookie);
   //setear cookie
   document.cookie = nuestra_cookie;
 }
@@ -428,7 +401,7 @@ function cargarCookies() {
   do {
     if (ca[i] != "") {
       let c = ca[i].split("="); //cada cookie separada por =
-      alert(ca[i]);
+      //alert(ca[i]);
       let cname = c[0].trim(); //nombre de la cookie
 
       //-------CREACION LINEA Y CELDAS-----
@@ -456,19 +429,6 @@ function cargarCookies() {
       if (lastIdNum > mayor) {
         mayor = lastIdNum;
       }
-      //----(EDITAR) CREAR ARRAY----
-
-      // let arreglo = [];
-      // arreglo[0] = lastId.value;
-      // arreglo[1] = nombre.value.toUpperCase();
-      // arreglo[2] = apellido.value.toUpperCase();
-      // arreglo[3] = direccion.value;
-      // arreglo[4] = email.value;
-      // arreglo[5] = telefono.value;
-      // arreglo[6] = organizacion.value;
-
-      // //----SETEAR ARREGLO COMO COOKIE
-      // setCookie("contacto" + lastId.value, codeArray(arreglo), 5);
 
       //----RELLENAR CELDAS----
       nuevaCelda1.textContent = lastId;
@@ -478,7 +438,7 @@ function cargarCookies() {
       nuevaCelda5.textContent = email;
       nuevaCelda6.textContent = telefono;
       nuevaCelda7.textContent = organizacion;
-      alert(nuevaCelda2.textContent);
+      //alert(nuevaCelda2.textContent);
 
       //----ESCONDER CELDAS----
       nuevaCelda4.setAttribute("hidden", true);
@@ -547,7 +507,7 @@ function getCookie(cname) {
       return c.substring(name.length, c.length); //retorna un substring, que es un recorte que toma solo el value
     }
   }
-  alert("no se encontro");
+  alert("no se encontro cookie");
   return "";
 }
 function delCookie(cname) {
