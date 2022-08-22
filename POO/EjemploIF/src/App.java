@@ -1,5 +1,3 @@
-import javax.print.event.PrintJobListener;
-
 import java.util.Scanner;
 
 public class App {

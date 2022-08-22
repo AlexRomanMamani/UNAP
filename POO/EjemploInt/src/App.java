@@ -5,7 +5,6 @@ public class App {
         System.out.println("Hello, World!");
 
         int numero; // RESERVO ESPACIO EN MEMORIA
-        int numero2;
 
         System.out.println("Porfavor ingrese un numero: ");
         Scanner lector = new Scanner(System.in);
