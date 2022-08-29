@@ -1,20 +1,20 @@
 public class App {
     public static void main(String[] args) throws Exception {
 
-        Persona persona1 = new Persona("Alex", "Mamani");
-        System.out.println("Nombre de persona1: " + persona1.getNombre());
+        Peliculas pelicula1 = new Peliculas("El señor de los anillos", "Fantasia");
+        Peliculas pelicula2 = new Peliculas("El hobbit", "Fantasia");
+        Cine cine1 = new Cine("Cinemark");
 
-        Empleado empleado1 = new Empleado("Contador");
-        System.out.println("Cargo: " + empleado1.getCargo());
+        pelicula1.setClasificacion("12");
 
-        String nuevoCargo = empleado1.cambiarCargo("Jefe");
+        String movieRating = pelicula1.getClasificacion();
 
-        empleado1.setCargo(nuevoCargo);
+        System.out.println("La pelicula " + pelicula1.getNombre() + " tiene una clasificacion de " + movieRating);
 
-        System.out.println("Nuevo cargo: " + empleado1.getCargo());
+        pelicula1.duracionPelicula(pelicula1.getNombre(), 180);
 
-        persona1.cargo = empleado1.cargo;
-        System.out.println("Cargo de persona1: " + persona1.cargo);
+        cine1.disponible(true);
+        pelicula1.mostrarPelicula(pelicula1.getNombre(), pelicula1.getGenero(), pelicula1.getClasificacion());
 
     }
 }
