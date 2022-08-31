@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/POO/EjemploControl/EjemploControl.iml" filepath="$PROJECT_DIR$/POO/EjemploControl/EjemploControl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/POO/EjemploIF/EjemploIF.iml" filepath="$PROJECT_DIR$/POO/EjemploIF/EjemploIF.iml" />
+      <module fileurl="file://$PROJECT_DIR$/POO/EjemploInt/EjemploInt.iml" filepath="$PROJECT_DIR$/POO/EjemploInt/EjemploInt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/POO/EjemploString/EjemploString.iml" filepath="$PROJECT_DIR$/POO/EjemploString/EjemploString.iml" />
+      <module fileurl="file://$PROJECT_DIR$/POO/ejerciciosDeProgramacion/Ejercicio1/Ejercicio1.iml" filepath="$PROJECT_DIR$/POO/ejerciciosDeProgramacion/Ejercicio1/Ejercicio1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/POO/ejerciciosDeProgramacion/Ejercicio10/Ejercicio10.iml" filepath="$PROJECT_DIR$/POO/ejerciciosDeProgramacion/Ejercicio10/Ejercicio10.iml" />
+      <module fileurl="file://$PROJECT_DIR$/POO/ejerciciosDeProgramacion/Ejercicio10Lucho/Ejercicio10Lucho.iml" filepath="$PROJECT_DIR$/POO/ejerciciosDeProgramacion/Ejercicio10Lucho/Ejercicio10Lucho.iml" />
+      <module fileurl="file://$PROJECT_DIR$/POO/ejerciciosDeProgramacion/Ejercicio11/Ejercicio11.iml" filepath="$PROJECT_DIR$/POO/ejerciciosDeProgramacion/Ejercicio11/Ejercicio11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/POO/ejerciciosDeProgramacion/Ejercicio12/Ejercicio12.iml" filepath="$PROJECT_DIR$/POO/ejerciciosDeProgramacion/Ejercicio12/Ejercicio12.iml" />
+      <module fileurl="file://$PROJECT_DIR$/POO/ejerciciosDeProgramacion/Ejercicio13_menorDeTres/Ejercicio13_menorDeTres.iml" filepath="$PROJECT_DIR$/POO/ejerciciosDeProgramacion/Ejercicio13_menorDeTres/Ejercicio13_menorDeTres.iml" />
+      <module fileurl="file://$PROJECT_DIR$/POO/ejerciciosDeProgramacion/Ejercicio14_correlativos/Ejercicio14_correlativos.iml" filepath="$PROJECT_DIR$/POO/ejerciciosDeProgramacion/Ejercicio14_correlativos/Ejercicio14_correlativos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/POO/ejerciciosDeProgramacion/Ejercicio15_sumatoria0a100/Ejercicio15_sumatoria0a100.iml" filepath="$PROJECT_DIR$/POO/ejerciciosDeProgramacion/Ejercicio15_sumatoria0a100/Ejercicio15_sumatoria0a100.iml" />
+      <module fileurl="file://$PROJECT_DIR$/POO/ejerciciosDeProgramacion/Ejercicio16_contVocales/Ejercicio16_contVocales.iml" filepath="$PROJECT_DIR$/POO/ejerciciosDeProgramacion/Ejercicio16_contVocales/Ejercicio16_contVocales.iml" />
+      <module fileurl="file://$PROJECT_DIR$/POO/ejerciciosDeProgramacion/Ejercicio17_Fibonacci/Ejercicio17_Fibonacci.iml" filepath="$PROJECT_DIR$/POO/ejerciciosDeProgramacion/Ejercicio17_Fibonacci/Ejercicio17_Fibonacci.iml" />
+      <module fileurl="file://$PROJECT_DIR$/POO/ejerciciosDeProgramacion/Ejercicio18_numeroMayor/Ejercicio18_numeroMayor.iml" filepath="$PROJECT_DIR$/POO/ejerciciosDeProgramacion/Ejercicio18_numeroMayor/Ejercicio18_numeroMayor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/POO/ejerciciosDeProgramacion/Ejercicio2/Ejercicio2.iml" filepath="$PROJECT_DIR$/POO/ejerciciosDeProgramacion/Ejercicio2/Ejercicio2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/POO/ejerciciosDeProgramacion/Ejercicio3/Ejercicio3.iml" filepath="$PROJECT_DIR$/POO/ejerciciosDeProgramacion/Ejercicio3/Ejercicio3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/POO/ejerciciosDeProgramacion/Ejercicio4/Ejercicio4.iml" filepath="$PROJECT_DIR$/POO/ejerciciosDeProgramacion/Ejercicio4/Ejercicio4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/POO/ejerciciosDeProgramacion/Ejercicio5/Ejercicio5.iml" filepath="$PROJECT_DIR$/POO/ejerciciosDeProgramacion/Ejercicio5/Ejercicio5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/POO/ejerciciosDeProgramacion/Ejercicio6/Ejercicio6.iml" filepath="$PROJECT_DIR$/POO/ejerciciosDeProgramacion/Ejercicio6/Ejercicio6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/POO/ejerciciosDeProgramacion/Ejercicio7/Ejercicio7.iml" filepath="$PROJECT_DIR$/POO/ejerciciosDeProgramacion/Ejercicio7/Ejercicio7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/POO/ejerciciosDeProgramacion/Ejercicio8/Ejercicio8.iml" filepath="$PROJECT_DIR$/POO/ejerciciosDeProgramacion/Ejercicio8/Ejercicio8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/POO/ejerciciosDeProgramacion/Ejercicio9/Ejercicio9.iml" filepath="$PROJECT_DIR$/POO/ejerciciosDeProgramacion/Ejercicio9/Ejercicio9.iml" />
+      <module fileurl="file://$PROJECT_DIR$/POO/EjercicioCuatico/EjercicioCuatico.iml" filepath="$PROJECT_DIR$/POO/EjercicioCuatico/EjercicioCuatico.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/UNAP.iml" filepath="$PROJECT_DIR$/.idea/UNAP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/POO/Clases/clase20220824/clase20220824.iml" filepath="$PROJECT_DIR$/POO/Clases/clase20220824/clase20220824.iml" />
+      <module fileurl="file://$PROJECT_DIR$/POO/Clases/ejercicio120220824/ejercicio120220824.iml" filepath="$PROJECT_DIR$/POO/Clases/ejercicio120220824/ejercicio120220824.iml" />
+    </modules>
+  </component>
+</project>
