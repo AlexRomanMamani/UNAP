@@ -11,7 +11,15 @@ public class Main {
 
         Peliculas pelicula1 = new Peliculas(title, format);
 
+        String a="NuevoFormato";
+        pelicula1.setFormato(a);
+
         pelicula1.mostrar();
+
+//        Peliculas[] nombreArreglo = new Peliculas[4];
+//        nombreArreglo =
+
+
 
 
     }

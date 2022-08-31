@@ -11,7 +11,7 @@ public class Peliculas {
     // GETTERS Y SETTERS
 
     public String getTitulo() {
-        return titulo;
+        return this.titulo;
     }
 
     public void setTitulo(String titulo) {
@@ -19,12 +19,13 @@ public class Peliculas {
     }
 
     public String getFormato() {
-        return formato;
+        return this.formato;
     }
 
     public void setFormato(String formato) {
         this.formato = formato;
     }
+
     // METODO
     public void mostrar(){
         System.out.println("La pelicula " + this.titulo + ", formato "+this.formato+ "," +
