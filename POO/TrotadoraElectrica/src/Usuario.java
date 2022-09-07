@@ -27,7 +27,7 @@ public class Usuario {
     // METODO TROTAR
     public void trotar(Boolean trotadoraEncendida){
         if (trotadoraEncendida){
-            System.out.println("Usted ha comenzado rutina de trote.");
+            System.out.println("Por lo tnanto,se da por iniciada la rutina de trote.");
 
         }else {
             System.out.println("Se ha decidido no comenzar rutina de trote. Adios.");
