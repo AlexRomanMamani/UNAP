@@ -10,7 +10,7 @@ public class Main {
         int peso= lector.nextInt();
         Usuario usuario1 = new Usuario(peso);
 
-        boolean dicidirTrotar;
+        boolean decidirTrotar;
 
         if (usuario1.calcularPeso(peso)){
             usuario1.trotar(encender);
@@ -18,11 +18,11 @@ public class Main {
             System.out.println("Aun asi desea trotar? \n 1:Si 2:No");
             int trotar= lector.nextInt();
             if (trotar==1){
-                dicidirTrotar=true;
+                decidirTrotar=true;
             }else {
-                dicidirTrotar=false;
+                decidirTrotar=false;
             }
-            usuario1.trotar(dicidirTrotar);
+            usuario1.trotar(decidirTrotar);
 
         }
 
