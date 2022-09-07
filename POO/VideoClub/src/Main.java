@@ -16,8 +16,7 @@ public class Main {
 
         pelicula1.mostrar();
 
-//        Peliculas[] nombreArreglo = new Peliculas[4];
-//        nombreArreglo =
+
 
 
 
